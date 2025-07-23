@@ -37,7 +37,7 @@ const About = () => {
               />
             </div>
             
-            {/* 3. GAMBAR PENGGANTI VIDEO (SUDAH DIGANTI) */}
+            {/* 3. GAMBAR PENGGANTI VIDEO */}
             <div className="relative overflow-hidden rounded-lg shadow-lg">
               <img 
                 src="/villa3.webp" 
