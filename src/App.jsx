@@ -1,24 +1,23 @@
-import SocialWidget from './components/SocialWidget';
+import { Routes, Route } from 'react-router-dom'
+import SocialWidget from './components/SocialWidget'
 import Header from './components/Header'
-import Hero from './components/Hero'
-import About from './components/About'
-import Features from './components/Features'
-import Testimonials from './components/Testimonials'
-import CTA from './components/CTA'
 import Footer from './components/Footer'
+import HomePage from './pages/HomePage' // Pastikan nama file HomePage.jsx
+import BlogPage from './pages/BlogPage'
+import PostPage from './pages/PostPage'
 import './App.css'
 
 function App() {
   return (
-    <div className="min-h-screen">
-      <SocialWidget /> {/* <-- UBAH INI */}
+    <div className="flex flex-col min-h-screen">
+      <SocialWidget />
       <Header />
-      <main>
-        <Hero />
-        <About />
-        <Features />
-        <Testimonials />
-        <CTA />
+      <main className="flex-grow">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<PostPage />} />
+        </Routes>
       </main>
       <Footer />
     </div>
