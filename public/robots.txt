@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://buminaeenk.com/sitemap.xml
+
+# Disallow admin pages (if any)
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /api/
+
+# Allow all crawlers to access the site
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+

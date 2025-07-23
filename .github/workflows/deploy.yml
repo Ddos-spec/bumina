@@ -1,61 +1,38 @@
-# Nama workflow
-name: Build and Deploy to GitHub Pages
+name: Deploy to GitHub Pages
 
-# Kapan workflow ini jalan
 on:
-  # Setiap kali ada push ke branch 'main'
   push:
-    branches: ["main"]
-  # Biar bisa dijalankan manual juga
-  workflow_dispatch:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
-# Izin yang dibutuhkan
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Langkah-langkah yang dikerjakan
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    
     steps:
-      # 1. Ambil kode dari repo
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    - name: Checkout
+      uses: actions/checkout@v4
 
-      # 2. Siapin pnpm (sesuai package.json boss)
-      - name: Set up pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 8 # Versi pnpm bisa disesuaikan
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
 
-      # 3. Siapin Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20' # Versi Node.js
-          cache: 'pnpm'
+    - name: Install dependencies
+      run: npm ci
 
-      # 4. Install semua dependency
-      - name: Install dependencies
-        run: pnpm install
+    - name: Build
+      run: npm run build
+      env:
+        NODE_ENV: production
 
-      # 5. Build project jadi folder 'dist'
-      - name: Build
-        run: pnpm build
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/main'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./out
+        cname: # Add your custom domain here if you have one
 
-      # 6. Siapin hasil build buat di-upload ke Pages
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      # 7. Upload hasil build dari folder 'dist'
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './dist'
-
-      # 8. Deploy ke GitHub Pages
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
