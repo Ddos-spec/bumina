@@ -11,7 +11,7 @@ const blogPosts = [
     excerpt: "Pangalengan gak harus mahal, kok! Ini dia tips jitu buat nikmatin liburan seru tanpa bikin kantong bolong...",
     author: "Adam Traveler",
     date: "23 Juli 2024",
-    image: "/kebun_teh1.jpg"
+    image: "/kebun_teh1.webp"
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const blogPosts = [
     excerpt: "Berburu matahari terbit di Taman Langit itu magis banget. Gue ceritain pengalaman gue dari awal sampai akhir.",
     author: "Adam Explorer",
     date: "21 Juli 2024",
-    image: "/taman_langit1.jpg"
+    image: "/taman_langit1.webp"
   },
 ];
 

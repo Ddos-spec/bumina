@@ -13,7 +13,7 @@ const Testimonials = () => {
       id: 2,
       name: "Karyawan PNS Dinas Ketenagakerjaan",
       text: "Family Gathering disini sangat-sangat enak sekali, tempatnya bersih, parkiran luas, dekat dengan banyak wisata salah satunya Taman Langit dan Situ Cileunca.",
-      avatar: "/avatar-karyawan.jpg",
+      avatar: "/avatar-karyawan.webp",
       rating: 5
     },
     {

@@ -21,7 +21,7 @@ const Hero = () => {
           {/* Teknik ini pake background-image, lebih stabil dan anti-gagal */}
           <div
             className="relative h-full w-full bg-cover bg-center"
-            style={{ backgroundImage: `url('/hero-kebun-teh.jpeg')` }}
+            style={{ backgroundImage: `url('/hero-kebun-teh.webp')` }}
             aria-label="Pemandangan kebun teh Pangalengan"
           >
             {/* Lapisan gelap biar kontras */}

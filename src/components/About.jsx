@@ -20,7 +20,7 @@ const About = () => {
             {/* 1. Tampak Depan Villa */}
             <div className="relative overflow-hidden rounded-lg shadow-lg">
               <img 
-                src="/villa1.jpg" 
+                src="/villa1.webp" 
                 alt="Homestay Bumina Eenk - Tampak depan villa"
                 className="object-cover w-full h-48 duration-300 transition-transform hover:scale-105"
                 loading="lazy"
@@ -30,7 +30,7 @@ const About = () => {
             {/* 2. Pemandangan Kebun Teh */}
             <div className="relative overflow-hidden rounded-lg shadow-lg">
               <img 
-                src="/kebun_teh1.jpg" 
+                src="/kebun_teh1.webp" 
                 alt="Pemandangan gunung dan kebun teh dari homestay"
                 className="object-cover w-full h-48 duration-300 transition-transform hover:scale-105"
                 loading="lazy"
@@ -40,7 +40,7 @@ const About = () => {
             {/* 3. GAMBAR PENGGANTI VIDEO (SUDAH DIGANTI) */}
             <div className="relative overflow-hidden rounded-lg shadow-lg">
               <img 
-                src="/villa3.jpeg" 
+                src="/villa3.webp" 
                 alt="Grup tamu yang sedang menginap di Homestay Bumina Eenk"
                 className="object-cover w-full h-48 duration-300 transition-transform hover:scale-105"
                 loading="lazy"
@@ -50,7 +50,7 @@ const About = () => {
             {/* 4. Interior Villa */}
             <div className="relative overflow-hidden rounded-lg shadow-lg">
               <img 
-                src="/villa2.jpg" 
+                src="/villa2.webp" 
                 alt="Interior homestay dengan perapian"
                 className="object-cover w-full h-48 duration-300 transition-transform hover:scale-105"
                 loading="lazy"

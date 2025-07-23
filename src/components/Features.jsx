@@ -6,7 +6,7 @@ const Features = () => {
       id: 1,
       title: "Penginapan sangat dekat dengan wisata taman langit bandung",
       description: "Setiap Pagi bisa melihat pemandangan gunung hijau yang berbaris dan hamparan kebun teh yang menyejukan mata.",
-      image: "/taman_langit1.jpg",
+      image: "/taman_langit1.webp",
       color: "bg-green-500",
       textColor: "text-white",
       icon: <Mountain className="w-6 h-6" />
@@ -15,7 +15,7 @@ const Features = () => {
       id: 2,
       title: "penginapan di situ cileunca bandung",
       description: "Rumah Luas bisa sampai 25 orang dan disediakan juga campign Ground berlantai kayu dan perapian dalam rumah",
-      image: "/kebun_teh2.jpg",
+      image: "/kebun_teh2.webp",
       color: "bg-orange-500",
       textColor: "text-white",
       icon: <Waves className="w-6 h-6" />
@@ -24,7 +24,7 @@ const Features = () => {
       id: 3,
       title: "Villa di pangalengan bandung",
       description: "Parkiran Motor dan Mobil Luas, sehingga tidak perlu khawatir, jalan tidak terlalu curam menanjak.",
-      image: "/villa1.jpg",
+      image: "/villa1.webp",
       color: "bg-blue-400",
       textColor: "text-white",
       icon: <Home className="w-6 h-6" />
@@ -33,7 +33,7 @@ const Features = () => {
       id: 4,
       title: "penginapan dekat nimo highland bandung",
       description: "Terdapat Dapur dalam Rumah sehingga tamu bisa membawa masakan yang siap untuk dimasak di sana.",
-      image: "/villa2.jpg",
+      image: "/villa2.webp",
       color: "bg-purple-500",
       textColor: "text-white",
       icon: <MapPin className="w-6 h-6" />
