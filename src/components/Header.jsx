@@ -1,9 +1,13 @@
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Link } from 'react-router-dom' // <-- Tambahin ini
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  // URL WhatsApp biar gampang diubah
+  const whatsappUrl = `https://wa.me/6285219460779?text=${encodeURIComponent("Halo, saya tertarik dengan Homestay Bumina Eenk.")}`
 
   return (
     <header className="bg-green-100 shadow-sm sticky top-0 z-50" role="banner">
@@ -25,21 +29,28 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6" role="navigation" aria-label="Main navigation">
-            <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded">
+            <a href="/#home" className="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded">
               Home
             </a>
-            <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded">
+            <a href="/#about" className="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded">
               About
             </a>
-            <a href="#features" className="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded">
+            <a href="/#features" className="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded">
               Fasilitas
             </a>
-            <a href="#testimonials" className="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded">
+            <a href="/#testimonials" className="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded">
               Testimoni
             </a>
-            <Button className="bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-              Kontak
-            </Button>
+            {/* --- MENU BLOG BARU (DESKTOP) --- */}
+            <Link to="/blog" className="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded">
+              Blog
+            </Link>
+            {/* --- TOMBOL KONTAK KAMI (DESKTOP) --- */}
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+              <Button className="bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                Kontak Kami
+              </Button>
+            </a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -63,21 +74,28 @@ const Header = () => {
             aria-label="Mobile navigation"
           >
             <div className="flex flex-col space-y-3">
-              <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded">
+              <a href="/#home" className="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded">
                 Home
               </a>
-              <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded">
+              <a href="/#about" className="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded">
                 About
               </a>
-              <a href="#features" className="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded">
+              <a href="/#features" className="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded">
                 Fasilitas
               </a>
-              <a href="#testimonials" className="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded">
+              <a href="/#testimonials" className="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded">
                 Testimoni
               </a>
-              <Button className="bg-blue-600 hover:bg-blue-700 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                Kontak
-              </Button>
+              {/* --- MENU BLOG BARU (MOBILE) --- */}
+              <Link to="/blog" className="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded">
+                Blog
+              </Link>
+              {/* --- TOMBOL KONTAK KAMI (MOBILE) --- */}
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                <Button className="bg-blue-600 hover:bg-blue-700 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                  Kontak Kami
+                </Button>
+              </a>
             </div>
           </nav>
         )}
@@ -87,4 +105,3 @@ const Header = () => {
 }
 
 export default Header
-
