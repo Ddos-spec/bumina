@@ -1,13 +1,12 @@
-// src/app/blog/page.tsx
-
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { blogPosts, type BlogPost } from "@/lib/data"; // <-- IMPORT TIPE BlogPost JUGA
+import { blogPosts, type BlogPost } from "@/lib/data";
 
+// Metadata diubah biar sesuai tema homestay & SEO-friendly
 export const metadata = {
-  title: "Blog - Raja Freeze Dried Food | Tips dan Informasi Freeze Drying",
-  description: "Baca artikel terbaru tentang teknologi freeze drying, tips bisnis makanan sehat, dan informasi terkini dari Raja Freeze Dried Food.",
+  title: "Blog Wisata Pangalengan - Tips & Rekomendasi dari Bumina EENK",
+  description: "Temukan panduan, tips liburan, dan rekomendasi tempat wisata terbaik di Pangalengan dari blog Homestay Bumina EENK.",
 };
 
 export default function BlogPage() {
@@ -15,14 +14,13 @@ export default function BlogPage() {
     <>
       <Header />
       <main className="min-h-screen bg-gray-50">
-        <section className="bg-gradient-to-br from-green-50 to-blue-50 py-16">
+        <section className="bg-gradient-to-br from-green-50 to-emerald-50 py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Blog Raja Freeze Dried Food
+              Blog Bumina EENK
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Temukan tips, informasi, dan wawasan terbaru tentang teknologi freeze drying, 
-              bisnis makanan sehat, dan tren industri makanan.
+              Panduan, tips, dan cerita seru buat nemenin petualangan lo di Pangalengan.
             </p>
           </div>
         </section>
@@ -30,7 +28,7 @@ export default function BlogPage() {
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {blogPosts.map((post: BlogPost) => ( // <-- KASIH TIPE DI SINI
+              {blogPosts.map((post: BlogPost) => (
                 <article
                   key={post.id}
                   className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
@@ -66,44 +64,14 @@ export default function BlogPage() {
                       className="inline-flex items-center text-green-600 font-medium hover:text-green-700 transition-colors"
                     >
                       Baca Selengkapnya
-                      <svg
-                        className="ml-2 w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
+                      <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </Link>
                   </div>
                 </article>
               ))}
             </div>
-          </div>
-        </section>
-
-        <section className="py-16 bg-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Dapatkan Update Terbaru
-            </h2>
-            <p className="text-lg text-gray-600 mb-8">
-              Berlangganan newsletter kami untuk mendapatkan artikel terbaru, tips, 
-              dan informasi eksklusif tentang freeze drying.
-            </p>
-            <a
-              href="https://wa.me/6281234567890?text=Halo%20Raja%20Freeze%20Dried%20Food,%20saya%20ingin%20berlangganan%20newsletter%20untuk%20mendapatkan%20update%20terbaru"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-green-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-green-700 transition-colors duration-200 inline-block"
-            >
-              Berlangganan via WhatsApp
-            </a>
           </div>
         </section>
       </main>

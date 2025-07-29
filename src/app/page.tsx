@@ -5,44 +5,44 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const testimonials = [
-  { 
-    name: "Keluarga Budi Santoso", 
-    feedback: "Pengalaman menginap yang luar biasa! Suasana kebun teh yang hijau dan udara sejuk pegunungan membuat kami merasa sangat nyaman. Perapian di dalam rumah benar-benar menghangatkan malam yang dingin. Highly recommended!", 
+  {
+    name: "Keluarga Budi Santoso",
+    feedback: "Pengalaman menginap yang luar biasa! Suasana kebun teh yang hijau dan udara sejuk pegunungan membuat kami merasa sangat nyaman. Perapian di dalam rumah benar-benar menghangatkan malam yang dingin. Highly recommended!",
     image: '/bumina/testimoni1.webp',
     rating: 5,
     location: "Jakarta"
   },
-  { 
-    name: "Rombongan Kantor PT Maju Bersama", 
-    feedback: "Villa yang sangat luas, bisa menampung 25 orang dengan nyaman. Fasilitas lengkap, dapur bersih, dan yang paling berkesan adalah pemandangan gunung di pagi hari. Tim kami sangat puas dengan pelayanannya.", 
+  {
+    name: "Rombongan Kantor PT Maju Bersama",
+    feedback: "Villa yang sangat luas, bisa menampung 25 orang dengan nyaman. Fasilitas lengkap, dapur bersih, dan yang paling berkesan adalah pemandangan gunung di pagi hari. Tim kami sangat puas dengan pelayanannya.",
     image: '/bumina/testimoni2.webp',
     rating: 5,
     location: "Surabaya"
   },
-  { 
-    name: "Keluarga Sari Wijaya", 
-    feedback: "Lokasi strategis dekat Taman Langit Pangalengan! Cuma jalan kaki sebentar sudah sampai. Anak-anak senang banget bisa main di camping ground berlantai kayu. Suasana alami yang masih asri.", 
+  {
+    name: "Keluarga Sari Wijaya",
+    feedback: "Lokasi strategis dekat Taman Langit Pangalengan! Cuma jalan kaki sebentar sudah sampai. Anak-anak senang banget bisa main di camping ground berlantai kayu. Suasana alami yang masih asri.",
     image: '/bumina/testimoni3.webp',
     rating: 5,
     location: "Bandung"
   },
-  { 
-    name: "Komunitas Fotografi Nusantara", 
-    feedback: "Spot foto terbaik! Hamparan kebun teh sosro yang hijau dengan latar belakang pegunungan sangat instagramable. Sunrise dan sunset view yang spektakuler. Pasti akan kembali lagi!", 
+  {
+    name: "Komunitas Fotografi Nusantara",
+    feedback: "Spot foto terbaik! Hamparan kebun teh sosro yang hijau dengan latar belakang pegunungan sangat instagramable. Sunrise dan sunset view yang spektakuler. Pasti akan kembali lagi!",
     image: '/bumina/testimoni4.webp',
     rating: 5,
     location: "Yogyakarta"
   },
-  { 
-    name: "Keluarga Besar Rahmat", 
-    feedback: "Reuni keluarga besar kami sangat berkesan di sini. Cuaca dingin 17 derajat sangat menyegarkan, parkiran luas untuk mobil dan motor. Yang paling diingat adalah kehangatan perapian saat berkumpul.", 
+  {
+    name: "Keluarga Besar Rahmat",
+    feedback: "Reuni keluarga besar kami sangat berkesan di sini. Cuaca dingin 17 derajat sangat menyegarkan, parkiran luas untuk mobil dan motor. Yang paling diingat adalah kehangatan perapian saat berkumpul.",
     image: '/bumina/testimoni5.webp',
     rating: 5,
     location: "Tangerang"
   },
-  { 
-    name: "Grup Pecinta Alam Bandung", 
-    feedback: "Akses mudah ke berbagai wisata seperti Situ Cileunca, Nemo Highland, dan Pemandian Air Panas Gunung Wayang Windu. Base camp yang sempurna untuk eksplorasi Pangalengan!", 
+  {
+    name: "Grup Pecinta Alam Bandung",
+    feedback: "Akses mudah ke berbagai wisata seperti Situ Cileunca, Nemo Highland, dan Pemandian Air Panas Gunung Wayang Windu. Base camp yang sempurna untuk eksplorasi Pangalengan!",
     image: '/bumina/testimoni6.webp',
     rating: 5,
     location: "Bandung"
@@ -51,17 +51,17 @@ const testimonials = [
 
 const sliderImages = [
     '/bumina/homestay1.webp',
-    '/bumina/homestay2.webp', 
+    '/bumina/homestay2.webp',
     '/bumina/homestay3.webp',
     '/bumina/homestay4.webp',
     '/bumina/homestay5.webp'
 ];
 
 // Ikon Components
-const StarIcon = () => ( 
-  <svg className="w-6 h-6 text-yellow-500 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"> 
-    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /> 
-  </svg> 
+const StarIcon = () => (
+  <svg className="w-6 h-6 text-yellow-500 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+  </svg>
 );
 
 const WhatsAppIcon = () => (
@@ -108,7 +108,6 @@ export default function Home() {
     <>
       <Header />
       <main className="bg-white text-gray-800">
-        {/* Hero Section - Diperbesar seperti poster */}
         <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 py-32 sm:py-48 flex items-center min-h-screen">
           <div className="absolute inset-0 bg-black/40"></div>
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
@@ -140,7 +139,7 @@ export default function Home() {
                 
                 <div className="mt-12 flex flex-col sm:flex-row gap-4">
                   <a
-                    href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20booking%20Homestay%20Bumina%20EENK"
+                    href="https://wa.me/6285219460779?text=Halo%2C%20saya%20ingin%20booking%20Homestay%20Bumina%20EENK"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center bg-green-600 text-white font-bold py-4 px-8 rounded-xl text-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-105 shadow-xl"
@@ -189,7 +188,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Experience Section */}
         <section className="py-24 bg-gradient-to-b from-white to-green-50">
           <div className="max-w-6xl mx-auto px-4 text-center">
             <div className="mb-16">
@@ -230,16 +228,15 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Expertise Section */}
         <section className="py-24 bg-gradient-to-br from-green-900 via-emerald-800 to-green-900 text-white">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-5xl md:text-6xl font-extrabold mb-6">
-                Keahlian <span className="text-emerald-400">& Pelayanan</span>
+                Apa Kata <span className="text-emerald-400">Mereka</span>
               </h2>
               <div className="w-32 h-2 bg-gradient-to-r from-emerald-400 to-green-400 mx-auto rounded-full mb-8"></div>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Dengarkan pengalaman nyata dari tamu-tamu yang telah merasakan kehangatan dan kenyamanan Homestay Bumina EENK
+                Dengarkan pengalaman nyata dari tamu-tamu yang telah merasakan kehangatan dan kenyamanan Homestay Bumina EENK.
               </p>
             </div>
             
@@ -290,7 +287,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Keunggulan Lokasi Section */}
         <section className="py-24 bg-gradient-to-b from-green-50 to-white">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
@@ -299,7 +295,7 @@ export default function Home() {
               </h2>
               <div className="w-32 h-2 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto rounded-full mb-8"></div>
               <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                Lokasi strategis di jantung Pangalengan dengan akses mudah ke berbagai destinasi wisata terpopuler
+                Lokasi strategis di jantung Pangalengan dengan akses mudah ke berbagai destinasi wisata terpopuler.
               </p>
             </div>
             
@@ -386,7 +382,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Trust Indicators */}
         <section className="py-20 bg-gray-900 text-white">
           <div className="max-w-6xl mx-auto px-4">
             <div className="text-center mb-12">
@@ -401,7 +396,7 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <div className="text-3xl font-bold text-emerald-400 mb-2">100+</div>
-                <div className="text-gray-300">Perusahaan</div>
+                <div className="text-gray-300">Rombongan Kantor</div>
               </div>
               <div className="p-6">
                 <div className="text-3xl font-bold text-emerald-400 mb-2">50+</div>
@@ -409,13 +404,12 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <div className="text-3xl font-bold text-emerald-400 mb-2">4.9★</div>
-                <div className="text-gray-300">Rating Google</div>
+                <div className="text-gray-300">Rating Online</div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Ultimate CTA Section - Booking */}
         <section className="py-24 bg-gradient-to-br from-green-900 via-emerald-800 to-green-900 text-white">
           <div className="max-w-6xl mx-auto px-4 text-center">
             <div className="bg-white/10 backdrop-blur-sm p-12 lg:p-16 rounded-3xl border border-white/20">
@@ -431,7 +425,7 @@ export default function Home() {
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <a
-                  href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20booking%20Homestay%20Bumina%20EENK%20untuk%20liburan%20yang%20tak%20terlupakan!"
+                  href="https://wa.me/6285219460779?text=Halo%2C%20saya%20ingin%20booking%20Homestay%20Bumina%20EENK%20untuk%20liburan%20yang%20tak%20terlupakan!"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center bg-green-600 text-white font-bold py-5 px-10 rounded-2xl text-xl hover:bg-green-700 transition-all duration-300 transform hover:scale-105 shadow-2xl min-w-[280px]"
@@ -462,134 +456,3 @@ export default function Home() {
     </>
   );
 }
-            </div>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div className="space-y-8">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-emerald-500 p-3 rounded-full flex-shrink-0">
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-3">15+ Tahun Pengalaman Hospitality</h3>
-                    <p className="text-emerald-100 text-lg leading-relaxed">
-                      Tim berpengalaman dalam memberikan pelayanan homestay terbaik dengan standar hospitalitas tinggi untuk kepuasan tamu.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="bg-emerald-500 p-3 rounded-full flex-shrink-0">
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-3">Ahli Wisata Lokal Pangalengan</h3>
-                    <p className="text-emerald-100 text-lg leading-relaxed">
-                      Pengetahuan mendalam tentang destinasi wisata terbaik di Pangalengan dan sekitarnya untuk panduan lengkap tamu.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="bg-emerald-500 p-3 rounded-full flex-shrink-0">
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-3">Spesialis Event & Gathering</h3>
-                    <p className="text-emerald-100 text-lg leading-relaxed">
-                      Berpengalaman menangani berbagai acara seperti reuni keluarga, gathering kantor, dan retreat perusahaan.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="grid grid-cols-2 gap-6">
-                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl text-center">
-                  <div className="text-4xl font-bold text-emerald-400 mb-2">500+</div>
-                  <div className="text-emerald-100">Tamu Puas</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl text-center">
-                  <div className="text-4xl font-bold text-emerald-400 mb-2">4.9/5</div>
-                  <div className="text-emerald-100">Rating Bintang</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl text-center">
-                  <div className="text-4xl font-bold text-emerald-400 mb-2">24/7</div>
-                  <div className="text-emerald-100">Pelayanan</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl text-center">
-                  <div className="text-4xl font-bold text-emerald-400 mb-2">100%</div>
-                  <div className="text-emerald-100">Kepuasan</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Authority Section */}
-        <section className="py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6">
-                Otoritas <span className="text-green-600">& Sertifikasi</span>
-              </h2>
-              <div className="w-32 h-2 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto rounded-full mb-8"></div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="text-center p-8 bg-gradient-to-b from-green-50 to-emerald-50 rounded-2xl shadow-lg">
-                <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Terdaftar Resmi</h3>
-                <p className="text-gray-600">Homestay terdaftar resmi di Dinas Pariwisata Kabupaten Bandung</p>
-              </div>
-              
-              <div className="text-center p-8 bg-gradient-to-b from-green-50 to-emerald-50 rounded-2xl shadow-lg">
-                <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Standar Kebersihan</h3>
-                <p className="text-gray-600">Memenuhi protokol kebersihan dan kesehatan sesuai standar nasional</p>
-              </div>
-              
-              <div className="text-center p-8 bg-gradient-to-b from-green-50 to-emerald-50 rounded-2xl shadow-lg">
-                <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Partner Booking.com</h3>
-                <p className="text-gray-600">Mitra resmi platform booking internasional dengan rating tinggi</p>
-              </div>
-              
-              <div className="text-center p-8 bg-gradient-to-b from-green-50 to-emerald-50 rounded-2xl shadow-lg">
-                <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Anggota PHRI</h3>
-                <p className="text-gray-600">Tergabung dalam Perhimpunan Hotel & Restoran Indonesia</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Testimonials Section */}
-        <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
-          <div className="max-w-6xl mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl md:text-6xl font-extrabold mb-6">
-                Testimoni <span className="text-emerald-400">Tamu</span>
-              </h2>
-              <div className="w-32 h-2 bg-gradient-to-r from-emerald-400 to-green-400 mx-auto rounded-full mb-8"></div>

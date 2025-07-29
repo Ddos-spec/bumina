@@ -3,7 +3,6 @@ import { blogPosts, type BlogPost } from "@/lib/data";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-// Ini adalah cara standar dan paling benar untuk mendefinisikan props halaman
 type PageProps = {
   params: {
     slug: string;
@@ -16,7 +15,6 @@ export function generateStaticParams() {
   }));
 }
 
-// Fungsi metadata ini TIDAK PERLU async karena tidak mengambil data dari luar
 export function generateMetadata({ params }: PageProps) {
   const post = blogPosts.find((p: BlogPost) => p.slug === params.slug);
   
@@ -26,13 +24,13 @@ export function generateMetadata({ params }: PageProps) {
     };
   }
 
+  // Judul halaman diubah biar relevan
   return {
-    title: `${post.title} - Raja Freeze Dried Food`,
+    title: `${post.title} - Bumina EENK Blog`,
     description: post.excerpt,
   };
 }
 
-// Ini adalah komponen halaman standar, TIDAK PERLU async
 export default function BlogPostDetail({ params }: PageProps) {
   const { slug } = params;
   const post = blogPosts.find((p: BlogPost) => p.slug === slug);
@@ -64,8 +62,9 @@ export default function BlogPostDetail({ params }: PageProps) {
               </h1>
             </header>
             
-            <div className="prose prose-lg max-w-none text-gray-700 leading-loose">
+            <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
               <p className="lead text-xl mb-6">{post.excerpt}</p>
+              {/* Di sini kita tampilkan konten lengkapnya */}
               <p>{post.content}</p>
             </div>
           </article>
