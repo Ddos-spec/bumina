@@ -1,0 +1,67 @@
+# Nama workflow yang akan muncul di tab Actions di GitHub
+name: Deploy Next.js to GitHub Pages
+
+# Kapan workflow ini dijalankan
+on:
+  # Dijalankan setiap kali ada push ke branch 'main'
+  push:
+    branches: ["main"]
+  # Bisa juga dijalankan manual dari tab Actions
+  workflow_dispatch:
+
+# Izin yang dibutuhkan oleh workflow
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Konfigurasi tambahan
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+# Langkah-langkah yang akan dijalankan
+jobs:
+  # Nama job-nya
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Mengambil kode dari repository
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20" # Versi Node.js
+          cache: 'npm'
+
+      # 3. Install semua dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # 4. Build project jadi file statis
+      - name: Build
+        # Ganti 'nama-repo-kamu' dengan nama repo kamu, persis sama yang di next.config.ts
+        run: npm run build
+        env:
+          GITHUB_ACTIONS: true
+
+      # 5. Setup GitHub Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      # 6. Upload hasil build ke GitHub Pages
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './out' # Folder hasil 'next export'
+
+      # 7. Deploy ke GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

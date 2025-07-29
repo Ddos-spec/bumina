@@ -1,0 +1,113 @@
+// src/app/blog/page.tsx
+
+import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { blogPosts, type BlogPost } from "@/lib/data"; // <-- IMPORT TIPE BlogPost JUGA
+
+export const metadata = {
+  title: "Blog - Raja Freeze Dried Food | Tips dan Informasi Freeze Drying",
+  description: "Baca artikel terbaru tentang teknologi freeze drying, tips bisnis makanan sehat, dan informasi terkini dari Raja Freeze Dried Food.",
+};
+
+export default function BlogPage() {
+  return (
+    <>
+      <Header />
+      <main className="min-h-screen bg-gray-50">
+        <section className="bg-gradient-to-br from-green-50 to-blue-50 py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Blog Raja Freeze Dried Food
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Temukan tips, informasi, dan wawasan terbaru tentang teknologi freeze drying, 
+              bisnis makanan sehat, dan tren industri makanan.
+            </p>
+          </div>
+        </section>
+
+        <section className="py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {blogPosts.map((post: BlogPost) => ( // <-- KASIH TIPE DI SINI
+                <article
+                  key={post.id}
+                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                >
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">
+                        {post.category}
+                      </span>
+                      <time className="text-gray-500 text-sm">
+                        {new Date(post.date).toLocaleDateString("id-ID", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })}
+                      </time>
+                    </div>
+
+                    <div className="text-center mb-4">
+                      <div className="text-6xl mb-4">{post.image}</div>
+                    </div>
+
+                    <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+                      {post.title}
+                    </h2>
+
+                    <p className="text-gray-600 mb-4 line-clamp-3">
+                      {post.excerpt}
+                    </p>
+
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="inline-flex items-center text-green-600 font-medium hover:text-green-700 transition-colors"
+                    >
+                      Baca Selengkapnya
+                      <svg
+                        className="ml-2 w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Dapatkan Update Terbaru
+            </h2>
+            <p className="text-lg text-gray-600 mb-8">
+              Berlangganan newsletter kami untuk mendapatkan artikel terbaru, tips, 
+              dan informasi eksklusif tentang freeze drying.
+            </p>
+            <a
+              href="https://wa.me/6281234567890?text=Halo%20Raja%20Freeze%20Dried%20Food,%20saya%20ingin%20berlangganan%20newsletter%20untuk%20mendapatkan%20update%20terbaru"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-green-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-green-700 transition-colors duration-200 inline-block"
+            >
+              Berlangganan via WhatsApp
+            </a>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}
