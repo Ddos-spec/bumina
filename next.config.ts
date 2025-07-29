@@ -8,8 +8,8 @@ const nextConfig: NextConfig = {
   output: 'export',
   
   // Ini kunci utamanya, boss! Biar semua path ke aset (CSS, JS, gambar) bener
-  assetPrefix: `/${bumina}/`,
-  basePath: `/${bumina}`,
+  assetPrefix: `/${repo}/`,
+  basePath: `/${repo}`,
 
   // Wajib `true` buat static export, biar gambar tetep muncul
   images: {
