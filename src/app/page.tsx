@@ -5,18 +5,18 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const products = [
-  { name: "Durian", description: "Snack yang terbuat dari buah durian asli, diolah dengan teknologi canggih untuk menjaga rasa otentik dan nutrisi alaminya.", image: 'images/durian.webp', shopeeUrl: "#", tokopediaUrl: "#" },
-  { name: "Manggis", description: "Nikmati kelezatan manggis dalam bentuk keripik renyah. Penuh antioksidan dan rasa manis yang khas.", image: 'images/manggis.webp', shopeeUrl: "#", tokopediaUrl: "#" },
-  { name: "Apel", description: "Keripik apel renyah yang mempertahankan semua kebaikan buah apel segar. Camilan sehat tanpa rasa bersalah.", image: 'images/apel.webp', shopeeUrl: "#", tokopediaUrl: "#" },
-  { name: "Mangga", description: "Rasa manis mangga tropis yang intens dalam setiap gigitan. Sumber energi alami yang praktis dibawa.", image: 'images/mangga.webp', shopeeUrl: "#", tokopediaUrl: "#" },
-  { name: "Jus Bar Mangga", description: "Nangka pilihan dengan rasa manis otentik, diolah sempurna untuk menjaga tekstur dan aroma khasnya.", image: 'images/manggajusbar.webp', shopeeUrl: "#", tokopediaUrl: "#" },
-  { name: "Pisang", description: "Manisnya pisang asli dalam setiap gigitan renyah. Diproses dengan cermat untuk mengunci semua kebaikan buah.", image: 'images/pisang.webp', shopeeUrl: "#", tokopediaUrl: "#" },
+  { name: "Durian", description: "Snack yang terbuat dari buah durian asli, diolah dengan teknologi canggih untuk menjaga rasa otentik dan nutrisi alaminya.", image: '/durian.webp', shopeeUrl: "#", tokopediaUrl: "#" },
+  { name: "Manggis", description: "Nikmati kelezatan manggis dalam bentuk keripik renyah. Penuh antioksidan dan rasa manis yang khas.", image: '/manggis.webp', shopeeUrl: "#", tokopediaUrl: "#" },
+  { name: "Apel", description: "Keripik apel renyah yang mempertahankan semua kebaikan buah apel segar. Camilan sehat tanpa rasa bersalah.", image: '/apel.webp', shopeeUrl: "#", tokopediaUrl: "#" },
+  { name: "Mangga", description: "Rasa manis mangga tropis yang intens dalam setiap gigitan. Sumber energi alami yang praktis dibawa.", image: '/mangga.webp', shopeeUrl: "#", tokopediaUrl: "#" },
+  { name: "Jus Bar Mangga", description: "Nangka pilihan dengan rasa manis otentik, diolah sempurna untuk menjaga tekstur dan aroma khasnya.", image: '/manggajusbar.webp', shopeeUrl: "#", tokopediaUrl: "#" },
+  { name: "Pisang", description: "Manisnya pisang asli dalam setiap gigitan renyah. Diproses dengan cermat untuk mengunci semua kebaikan buah.", image: '/pisang.webp', shopeeUrl: "#", tokopediaUrl: "#" },
 ];
 
 const sliderImages = [
-    'images/slider1.webp',
-    'images/slider2.webp',
-    'images/slider3.webp',
+    '/slider1.webp',
+    '/slider2.webp',
+    '/slider3.webp',
 ];
 
 // --- Kumpulan Ikon (MENGGUNAKAN VERSI ASLI DARI KODE LU) ---
@@ -55,7 +55,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="w-full h-80 relative rounded-2xl overflow-hidden shadow-2xl">
-                <Image src="images/fotoawalhero.webp" alt="Produk Freeze Dried Unggulan" layout="fill" objectFit="cover" unoptimized />
+                <Image src="/fotoawalhero.webp" alt="Produk Freeze Dried Unggulan" layout="fill" objectFit="cover" unoptimized />
               </div>
             </div>
           </div>
