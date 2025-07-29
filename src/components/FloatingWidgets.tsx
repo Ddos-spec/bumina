@@ -14,13 +14,13 @@ const FloatingWidgets = () => {
       name: "Shopee",
       icon: "/shopee.svg",
       color: "bg-orange-500 hover:bg-orange-600",
-      link: "https://shopee.co.id/rajafreezdriedfood",
+      link: "https://shopee.co.id/bumina",
     },
     {
       name: "Tokopedia",
       icon: "/tokped.svg",
       color: "bg-green-600 hover:bg-green-700",
-      link: "https://tokopedia.com/rajafreezdriedfood",
+      link: "https://tokopedia.com/bumina",
     },
   ];
 

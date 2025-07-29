@@ -24,7 +24,7 @@ const Footer = () => {
                 WhatsApp
               </a>
               <a
-                href="https://shopee.co.id/rajafreezdriedfood"
+                href="https://shopee.co.id/bumina"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-orange-400 hover:text-orange-300 transition-colors"
@@ -32,7 +32,7 @@ const Footer = () => {
                 Shopee
               </a>
               <a
-                href="https://tokopedia.com/rajafreezdriedfood"
+                href="https://tokopedia.com/bumina"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-green-400 hover:text-green-300 transition-colors"
@@ -73,7 +73,7 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Kontak</h4>
             <ul className="space-y-2 text-gray-300">
-              <li>Email: info@rajafreezdriedfood.com</li>
+              <li>Email: info@bumina.com</li>
               <li>Phone: +62 812-3456-7890</li>
               <li>Alamat: Jakarta, Indonesia</li>
             </ul>

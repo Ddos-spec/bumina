@@ -70,8 +70,8 @@ export default function ContactPage() {
                     <div>
                       <h3 className="text-lg font-semibold text-gray-900 mb-1">Email</h3>
                       <p className="text-gray-600">
-                        <a href="mailto:info@rajafreezdriedfood.com" className="hover:text-green-600 transition-colors">
-                          info@rajafreezdriedfood.com
+                        <a href="mailto:info@bumina.com" className="hover:text-green-600 transition-colors">
+                          info@bumina.com
                         </a>
                       </p>
                     </div>
@@ -105,7 +105,7 @@ export default function ContactPage() {
                       <span className="text-xl">💬</span>
                     </a>
                     <a
-                      href="https://shopee.co.id/rajafreezdriedfood"
+                      href="https://shopee.co.id/bumina"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-orange-500 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors"
@@ -114,7 +114,7 @@ export default function ContactPage() {
                       <span className="text-xl">🛒</span>
                     </a>
                     <a
-                      href="https://tokopedia.com/rajafreezdriedfood"
+                      href="https://tokopedia.com/bumina"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-green-700 transition-colors"

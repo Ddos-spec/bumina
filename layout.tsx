@@ -43,8 +43,8 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "Raja Freeze Dried Food",
               "description": "Penyedia makanan sehat freeze dried berkualitas tinggi",
-              "url": "https://rajafreezdriedfood.com",
-              "logo": "https://rajafreezdriedfood.com/logo.png",
+              "url": "https://bumina.com",
+              "logo": "https://bumina.com/logo.png",
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+62-xxx-xxxx-xxxx",

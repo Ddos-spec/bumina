@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://rajafreezdriedfood.com'
+  const baseUrl = 'https://bumina.com'
 
   return [
     {

@@ -29,7 +29,7 @@ const FloatingWidgets = () => {
       name: "Shopee",
       icon: <span className="font-bold text-2xl">S</span>, // Ganti pake ikon Shopee kalo mau
       color: "bg-orange-500 hover:bg-orange-600",
-      link: "https://shopee.co.id/rajafreezdriedfood",
+      link: "https://shopee.co.id/bumina",
     },
   ];
 
