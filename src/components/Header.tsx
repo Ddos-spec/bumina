@@ -25,7 +25,7 @@ const Header = () => {
           <Link href="/" className="flex items-center gap-2">
             <div className="relative w-12 h-12">
                 {/* HAPUS basePath dari sini */}
-                <Image src="/favicon.avif" alt="Logo Astronot Food" layout="fill" objectFit="contain" unoptimized />
+                <Image src="/bumina/favicon.avif" alt="Logo Astronot Food" layout="fill" objectFit="contain" unoptimized />
             </div>
             <span className="text-xl font-bold text-orange-600 hidden sm:block">
               Freeze Dried Indonesia

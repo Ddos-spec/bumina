@@ -6,19 +6,19 @@ const FloatingWidgets = () => {
   const widgets = [
     {
       name: "WhatsApp",
-      icon: "/whatsapp.svg",
+      icon: "/bumina/whatsapp.svg",
       color: "bg-green-500 hover:bg-green-600",
       link: "https://wa.me/6281234567890?text=Halo%20Raja%20Freeze%20Dried%20Food,%20saya%20tertarik%20dengan%20produk%20Anda",
     },
     {
       name: "Shopee",
-      icon: "/shopee.svg",
+      icon: "/bumina/shopee.svg",
       color: "bg-orange-500 hover:bg-orange-600",
       link: "https://shopee.co.id/bumina",
     },
     {
       name: "Tokopedia",
-      icon: "/tokped.svg",
+      icon: "/bumina/tokped.svg",
       color: "bg-green-600 hover:bg-green-700",
       link: "https://tokopedia.com/bumina",
     },

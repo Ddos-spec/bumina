@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "Raja Freeze Dried Food menyediakan makanan sehat freeze dried berkualitas tinggi. Nikmati kelezatan dan nutrisi yang terjaga dengan teknologi freeze drying terdepan.",
   // Ganti Favicon - pake path absolut
   icons: {
-    icon: '/favicon.avif',
+    icon: '/bumina/favicon.avif',
   },
 
   keywords: "freeze dried food, makanan sehat, snack sehat, freeze drying, makanan kering, nutrisi terjaga",
