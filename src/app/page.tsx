@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const products = [
-  { name: "Durian", description: "Snack yang terbuat dari buah durian asli, diolah dengan teknologi canggih untuk menjaga rasa otentik dan nutrisi alaminya.", image: 'bumina/durian.webp', shopeeUrl: "#", tokopediaUrl: "#" },
+  { name: "Durian", description: "Snack yang terbuat dari buah durian asli, diolah dengan teknologi canggih untuk menjaga rasa otentik dan nutrisi alaminya.", image: '/durian.webp', shopeeUrl: "#", tokopediaUrl: "#" },
   { name: "Manggis", description: "Nikmati kelezatan manggis dalam bentuk keripik renyah. Penuh antioksidan dan rasa manis yang khas.", image: '/manggis.webp', shopeeUrl: "#", tokopediaUrl: "#" },
   { name: "Apel", description: "Keripik apel renyah yang mempertahankan semua kebaikan buah apel segar. Camilan sehat tanpa rasa bersalah.", image: '/apel.webp', shopeeUrl: "#", tokopediaUrl: "#" },
   { name: "Mangga", description: "Rasa manis mangga tropis yang intens dalam setiap gigitan. Sumber energi alami yang praktis dibawa.", image: '/mangga.webp', shopeeUrl: "#", tokopediaUrl: "#" },
