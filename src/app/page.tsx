@@ -4,170 +4,457 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const products = [
-  { name: "Durian", description: "Snack yang terbuat dari buah durian asli, diolah dengan teknologi canggih untuk menjaga rasa otentik dan nutrisi alaminya.", image: '/bumina/durian.webp', shopeeUrl: "#", tokopediaUrl: "#" },
-  { name: "Manggis", description: "Nikmati kelezatan manggis dalam bentuk keripik renyah. Penuh antioksidan dan rasa manis yang khas.", image: '/bumina/manggis.webp', shopeeUrl: "#", tokopediaUrl: "#" },
-  { name: "Apel", description: "Keripik apel renyah yang mempertahankan semua kebaikan buah apel segar. Camilan sehat tanpa rasa bersalah.", image: '/bumina/apel.webp', shopeeUrl: "#", tokopediaUrl: "#" },
-  { name: "Mangga", description: "Rasa manis mangga tropis yang intens dalam setiap gigitan. Sumber energi alami yang praktis dibawa.", image: '/bumina/mangga.webp', shopeeUrl: "#", tokopediaUrl: "#" },
-  { name: "Jus Bar Mangga", description: "Nangka pilihan dengan rasa manis otentik, diolah sempurna untuk menjaga tekstur dan aroma khasnya.", image: '/bumina/manggajusbar.webp', shopeeUrl: "#", tokopediaUrl: "#" },
-  { name: "Pisang", description: "Manisnya pisang asli dalam setiap gigitan renyah. Diproses dengan cermat untuk mengunci semua kebaikan buah.", image: '/bumina/pisang.webp', shopeeUrl: "#", tokopediaUrl: "#" },
+const testimonials = [
+  { 
+    name: "Keluarga Budi Santoso", 
+    feedback: "Pengalaman menginap yang luar biasa! Suasana kebun teh yang hijau dan udara sejuk pegunungan membuat kami merasa sangat nyaman. Perapian di dalam rumah benar-benar menghangatkan malam yang dingin. Highly recommended!", 
+    image: '/bumina/testimoni1.webp',
+    rating: 5,
+    location: "Jakarta"
+  },
+  { 
+    name: "Rombongan Kantor PT Maju Bersama", 
+    feedback: "Villa yang sangat luas, bisa menampung 25 orang dengan nyaman. Fasilitas lengkap, dapur bersih, dan yang paling berkesan adalah pemandangan gunung di pagi hari. Tim kami sangat puas dengan pelayanannya.", 
+    image: '/bumina/testimoni2.webp',
+    rating: 5,
+    location: "Surabaya"
+  },
+  { 
+    name: "Keluarga Sari Wijaya", 
+    feedback: "Lokasi strategis dekat Taman Langit Pangalengan! Cuma jalan kaki sebentar sudah sampai. Anak-anak senang banget bisa main di camping ground berlantai kayu. Suasana alami yang masih asri.", 
+    image: '/bumina/testimoni3.webp',
+    rating: 5,
+    location: "Bandung"
+  },
+  { 
+    name: "Komunitas Fotografi Nusantara", 
+    feedback: "Spot foto terbaik! Hamparan kebun teh sosro yang hijau dengan latar belakang pegunungan sangat instagramable. Sunrise dan sunset view yang spektakuler. Pasti akan kembali lagi!", 
+    image: '/bumina/testimoni4.webp',
+    rating: 5,
+    location: "Yogyakarta"
+  },
+  { 
+    name: "Keluarga Besar Rahmat", 
+    feedback: "Reuni keluarga besar kami sangat berkesan di sini. Cuaca dingin 17 derajat sangat menyegarkan, parkiran luas untuk mobil dan motor. Yang paling diingat adalah kehangatan perapian saat berkumpul.", 
+    image: '/bumina/testimoni5.webp',
+    rating: 5,
+    location: "Tangerang"
+  },
+  { 
+    name: "Grup Pecinta Alam Bandung", 
+    feedback: "Akses mudah ke berbagai wisata seperti Situ Cileunca, Nemo Highland, dan Pemandian Air Panas Gunung Wayang Windu. Base camp yang sempurna untuk eksplorasi Pangalengan!", 
+    image: '/bumina/testimoni6.webp',
+    rating: 5,
+    location: "Bandung"
+  }
 ];
 
 const sliderImages = [
-    '/bumina/slider1.webp',
-    '/bumina/slider2.webp',
-    '/bumina/slider3.webp',
+    '/bumina/homestay1.webp',
+    '/bumina/homestay2.webp', 
+    '/bumina/homestay3.webp',
+    '/bumina/homestay4.webp',
+    '/bumina/homestay5.webp'
 ];
 
-// --- Kumpulan Ikon (MENGGUNAKAN VERSI ASLI DARI KODE LU) ---
-const StarIcon = () => ( <svg className="w-6 h-6 text-orange-500 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"> <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /> </svg> );
-const ShopeeIcon = () => ( <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 512 512"><path d="M256.1 2.2c-1.2 3.6-2.5 7.1-4.2 10.5-2.6 5.1-6.1 9.4-10.4 12.8-10.2 8.2-24.1 11.4-36.9 8.2-13.8-3.5-26.2-12.3-33.8-24.4-3.1-5-5.6-10.4-7.3-16-1-3.3-1.8-6.7-2.3-10.1-4.1 1.8-8.1 3.9-11.8 6.4-11.4 7.6-24.9 12.1-38.9 12.1-22.3 0-42.5-9.3-56.1-24.4-14-15.5-22.3-36.1-22.3-58.2 0-23.4 9.6-44.9 25.3-60.2 16-15.6 37.9-25 61.8-25 14.2 0 27.9 4.7 39.4 13.2 9.5 7.2 17.5 16.9 23.3 28.1 4.5 8.7 8 18.2 10.4 28.1 3.1 12.8 3.1 26.2 0 39.4-2.1 8.9-5.3 17.5-9.4 25.4-8.2 16-22.3 27.2-39.4 31.9-18.7 5.1-38.9 2-54-8.2-12.8-8.7-22.3-21.2-26.2-35.6-2.5-9.1-3.6-18.5-3.6-28.1 0-18.5 5.3-35.6 14.8-49.7 9.8-14.5 24.1-24.4 41.5-28.1 18.2-3.8 37.1-.5 52.9 8.2 15.2 8.4 27.4 21.2 34.8 36.9 4.2 8.9 7.3 18.7 9.4 29.1 2.3 11.6 2.3 23.6 0 35.6-2.3 11.8-6.9 22.8-13.2 32.4-1.2-3.6-2.5-7.1-4.2-10.5-2.6-5.1-6.1 9.4-10.4 12.8-10.2-8.2-24.1-11.4-36.9-8.2-13.8 3.5-26.2-12.3-33.8-24.4-3.1 5-5.6-10.4-7.3-16-1-3.3-1.8-6.7-2.3-10.1-4.1 1.8-8.1 3.9-11.8 6.4-11.4 7.6-24.9 12.1-38.9 12.1-22.3 0-42.5-9.3-56.1-24.4-14-15.5-22.3-36.1-22.3-58.2 0-23.4 9.6-44.9 25.3-60.2 16-15.6 37.9-25 61.8-25 14.2 0 27.9 4.7 39.4 13.2 9.5 7.2 17.5 16.9 23.3 28.1 4.5 8.7 8 18.2 10.4 28.1 3.1 12.8 3.1 26.2 0 39.4-2.1 8.9-5.3 17.5-9.4 25.4-8.2 16-22.3 27.2-39.4 31.9-18.7 5.1-38.9 2-54-8.2-12.8-8.7-22.3-21.2-26.2-35.6-2.5-9.1-3.6-18.5-3.6-28.1 0-18.5 5.3-35.6 14.8-49.7 9.8-14.5 24.1-24.4 41.5-28.1 18.2-3.8 37.1-.5 52.9 8.2 15.2 8.4 27.4 21.2 34.8 36.9 4.2 8.9 7.3 18.7 9.4 29.1 2.3 11.6 2.3 23.6 0 35.6-2.3 11.8-6.9 22.8-13.2 32.4z"/></svg> );
-const TokopediaIcon = () => ( <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 512 512"><path d="M256 8C119.03 8 8 119.03 8 256s111.03 248 248 248 248-111.03 248-248S392.97 8 256 8zm113.9 336.8c-2.3 2.3-5.4 3.5-8.5 3.5s-6.2-1.2-8.5-3.5L256 248.5l-96.9 96.3c-2.3 2.3-5.4 3.5-8.5 3.5s-6.2-1.2-8.5-3.5c-4.7-4.7-4.7-12.3 0-17l96.9-96.3-96.9-96.3c-4.7-4.7-4.7-12.3 0-17s12.3-4.7 17 0l96.9 96.3 96.9-96.3c4.7-4.7 12.3-4.7 17 0s4.7 12.3 0 17L273.5 256l96.9 96.3c4.7 4.5 4.7 12.3-.5 17z"/></svg> );
+// Ikon Components
+const StarIcon = () => ( 
+  <svg className="w-6 h-6 text-yellow-500 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"> 
+    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /> 
+  </svg> 
+);
+
+const WhatsAppIcon = () => (
+  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+  </svg>
+);
+
+const BookingIcon = () => (
+  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z"/>
+  </svg>
+);
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
   useEffect(() => {
     const slideInterval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide === sliderImages.length - 1 ? 0 : prevSlide + 1));
-    }, 5000);
+    }, 4000);
 
     return () => clearInterval(slideInterval);
   }, []);
+
+  useEffect(() => {
+    const testimonialInterval = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+    }, 6000);
+
+    return () => clearInterval(testimonialInterval);
+  }, []);
+
+  const renderStars = (rating: number) => {
+    return Array.from({ length: rating }, (_, i) => (
+      <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+      </svg>
+    ));
+  };
 
   return (
     <>
       <Header />
       <main className="bg-white text-gray-800">
-        {/* Hero Section */}
-        <section className="bg-white py-24 sm:py-32 flex items-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Hero Section - Diperbesar seperti poster */}
+        <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 py-32 sm:py-48 flex items-center min-h-screen">
+          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="text-center lg:text-left">
-                <p className="text-lg font-semibold text-gray-500">
-                  Jasa Vacuum Freeze Dried Pertama di Indonesia
-                </p>
-                <h1 className="mt-4 text-4xl md:text-6xl font-extrabold tracking-tight uppercase text-gray-900">
-                  Freeze Dried <span className="text-orange-500">INDONESIA</span>
+                <div className="inline-block bg-emerald-600/20 backdrop-blur-sm rounded-full px-6 py-3 mb-8">
+                  <p className="text-lg font-semibold text-emerald-200">
+                    🏔️ Villa Terbaik di Pangalengan Bandung
+                  </p>
+                </div>
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight uppercase text-white leading-none">
+                  HOMESTAY <br/>
+                  <span className="text-emerald-400">BUMINA EENK</span>
                 </h1>
-                <p className="mt-6 text-xl text-gray-600">
-                  Anda sedang mencari pesanan khusus untuk makanan Freeze Dried?
-                </p>
+                <div className="mt-8 space-y-4">
+                  <p className="text-xl md:text-2xl text-emerald-100 font-medium">
+                    🌿 Di tengah kebun teh sosro yang hijau
+                  </p>
+                  <p className="text-xl md:text-2xl text-emerald-100 font-medium">
+                    🏔️ Pemandangan gunung yang memukau
+                  </p>
+                  <p className="text-xl md:text-2xl text-emerald-100 font-medium">
+                    🔥 Perapian hangat untuk malam dingin
+                  </p>
+                  <p className="text-xl md:text-2xl text-emerald-100 font-medium">
+                    🚶 Dekat Taman Langit Pangalengan
+                  </p>
+                </div>
+                
+                <div className="mt-12 flex flex-col sm:flex-row gap-4">
+                  <a
+                    href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20booking%20Homestay%20Bumina%20EENK"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center bg-green-600 text-white font-bold py-4 px-8 rounded-xl text-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-105 shadow-xl"
+                  >
+                    <WhatsAppIcon />
+                    Book via WhatsApp
+                  </a>
+                  <a
+                    href="https://www.booking.com/hotel/id/bumina-eenk.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center bg-blue-600 text-white font-bold py-4 px-8 rounded-xl text-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-xl"
+                  >
+                    <BookingIcon />
+                    Book via Booking.com
+                  </a>
+                </div>
               </div>
-              <div className="w-full h-80 relative rounded-2xl overflow-hidden shadow-2xl">
-                <Image src="/bumina/fotoawalhero.webp" alt="Produk Freeze Dried Unggulan" layout="fill" objectFit="cover" unoptimized />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Penjelasan "Apa itu Vacuum Freeze Dried?" */}
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-5xl mx-auto px-4 text-center">
-             <h2 className="text-4xl md:text-5xl font-bold">Apa itu Vacuum Freeze Dried?</h2>
-             <div className="w-32 h-1 bg-orange-500 mx-auto mt-6 mb-8"></div>
-             <p className="text-lg text-gray-600 leading-relaxed mb-12">
-              Pengeringan beku adalah proses dehidrasi makanan beku di bawah vakum sehingga kadar air berubah langsung dari bentuk padat menjadi gas tanpa harus mengalami keadaan cair perantara melalui sublimasi. Dalam proses ini, makanan kering beku mempertahankan ukuran dan bentuk aslinya dengan kerusakan sel yang minimal. Menghilangkan kelembapan mencegah produk memburuk pada suhu kamar.
-             </p>
-          </div>
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="relative h-96 rounded-2xl overflow-hidden shadow-lg">
-                 {sliderImages.map((src, index) => (
+              
+              <div className="relative">
+                <div className="w-full h-96 lg:h-[600px] relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20">
+                  {sliderImages.map((src, index) => (
                     <div key={src} className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}>
-                        <Image src={src} alt={`Slider Image ${index + 1}`} layout="fill" objectFit="cover" unoptimized />
+                      <Image src={src} alt={`Homestay Bumina EENK ${index + 1}`} layout="fill" objectFit="cover" unoptimized />
                     </div>
-                 ))}
-                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+                  ))}
+                  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-3 z-10">
                     {sliderImages.map((_, index) => (
-                        <button key={index} onClick={() => setCurrentSlide(index)} className={`block w-3 h-3 rounded-full ${index === currentSlide ? 'bg-orange-500' : 'bg-white'}`}></button>
+                      <button 
+                        key={index} 
+                        onClick={() => setCurrentSlide(index)} 
+                        className={`block w-4 h-4 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-emerald-400 scale-125' : 'bg-white/50 hover:bg-white/75'}`}
+                      />
                     ))}
-                 </div>
-              </div>
-              <div>
-                <h3 className="text-3xl font-bold mb-6">Keunggulan Proses Olahan Makanan</h3>
-                <ul className="space-y-6">
-                  <li className="flex items-start"><StarIcon /><div><h4 className="font-semibold text-lg">Kualitas Produk Lebih Stabil</h4><p className="text-gray-600">Tidak terjadi perubahan aroma, warna, dan unsur organoleptik lainnya.</p></div></li>
-                  <li className="flex items-start"><StarIcon /><div><h4 className="font-semibold text-lg">Struktur Bahan Tetap Terjaga</h4><p className="text-gray-600">Tidak terjadi pengerutan atau perubahan bentuk struktur bahan.</p></div></li>
-                  <li className="flex items-start"><StarIcon /><div><h4 className="font-semibold text-lg">Daya Rehidrasi Meningkat</h4><p className="text-gray-600">Dapat kembali ke sifat fisik yang hampir sama dengan sebelum pengeringan.</p></div></li>
-                </ul>
+                  </div>
+                </div>
+                
+                <div className="absolute -top-8 -right-8 bg-emerald-500 text-white p-6 rounded-2xl shadow-xl transform rotate-12">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold">17°C</div>
+                    <div className="text-sm">Suhu Sejuk</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Product Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold">Product Olahan Kami</h2>
-            <div className="w-32 h-1 bg-orange-500 mx-auto mt-6 mb-12"></div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {products.map((product) => (
-                <div key={product.name} className="bg-white rounded-lg overflow-hidden border border-gray-200 shadow-lg transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
-                  <div className="relative w-full h-64">
-                    <Image src={product.image} alt={`Gambar ${product.name}`} layout="fill" objectFit="cover" unoptimized />
+        {/* Experience Section */}
+        <section className="py-24 bg-gradient-to-b from-white to-green-50">
+          <div className="max-w-6xl mx-auto px-4 text-center">
+            <div className="mb-16">
+              <h2 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6">
+                Pengalaman <span className="text-green-600">Tak Terlupakan</span>
+              </h2>
+              <div className="w-32 h-2 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto rounded-full mb-8"></div>
+              <p className="text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
+                Homestay Bumina EENK terletak di tengah-tengah kebun teh sosro dengan pemandangan gunung yang memukau. Rasakan kesejukan udara pegunungan dengan suhu mencapai 17 derajat dan nikmati kehangatan perapian di malam hari.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="bg-white p-8 rounded-2xl shadow-xl border border-green-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="text-5xl mb-4">🏔️</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Pemandangan Gunung</h3>
+                <p className="text-gray-600">Bangun dengan pemandangan gunung hijau yang berbaris indah setiap pagi</p>
+              </div>
+              
+              <div className="bg-white p-8 rounded-2xl shadow-xl border border-green-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="text-5xl mb-4">🌿</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Kebun Teh Sosro</h3>
+                <p className="text-gray-600">Dikelilingi hamparan kebun teh hijau yang menyejukkan mata dan jiwa</p>
+              </div>
+              
+              <div className="bg-white p-8 rounded-2xl shadow-xl border border-green-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="text-5xl mb-4">🔥</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Perapian Hangat</h3>
+                <p className="text-gray-600">Nikmati kehangatan perapian dalam rumah untuk malam yang dingin</p>
+              </div>
+              
+              <div className="bg-white p-8 rounded-2xl shadow-xl border border-green-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="text-5xl mb-4">👥</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Kapasitas 25 Orang</h3>
+                <p className="text-gray-600">Villa luas yang cocok untuk keluarga besar, rombongan, atau gathering</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Expertise Section */}
+        <section className="py-24 bg-gradient-to-br from-green-900 via-emerald-800 to-green-900 text-white">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl md:text-6xl font-extrabold mb-6">
+                Keahlian <span className="text-emerald-400">& Pelayanan</span>
+              </h2>
+              <div className="w-32 h-2 bg-gradient-to-r from-emerald-400 to-green-400 mx-auto rounded-full mb-8"></div>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Dengarkan pengalaman nyata dari tamu-tamu yang telah merasakan kehangatan dan kenyamanan Homestay Bumina EENK
+              </p>
+            </div>
+            
+            <div className="relative">
+              <div className="overflow-hidden">
+                <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentTestimonial * 100}%)` }}>
+                  {testimonials.map((testimonial, index) => (
+                    <div key={index} className="w-full flex-shrink-0 px-4">
+                      <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 lg:p-12 max-w-4xl mx-auto">
+                        <div className="flex flex-col lg:flex-row items-center gap-8">
+                          <div className="w-32 h-32 relative rounded-full overflow-hidden flex-shrink-0 border-4 border-emerald-400">
+                            <Image src={testimonial.image} alt={testimonial.name} layout="fill" objectFit="cover" unoptimized />
+                          </div>
+                          
+                          <div className="flex-1 text-center lg:text-left">
+                            <div className="flex justify-center lg:justify-start mb-4">
+                              {renderStars(testimonial.rating)}
+                            </div>
+                            
+                            <blockquote className="text-xl lg:text-2xl text-gray-100 mb-6 italic leading-relaxed">
+                              "{testimonial.feedback}"
+                            </blockquote>
+                            
+                            <div>
+                              <div className="text-xl font-bold text-emerald-400">{testimonial.name}</div>
+                              <div className="text-emerald-200">{testimonial.location}</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="flex justify-center space-x-3 mt-8">
+                {testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentTestimonial(index)}
+                    className={`w-4 h-4 rounded-full transition-all duration-300 ${
+                      index === currentTestimonial ? 'bg-emerald-400 scale-125' : 'bg-white/30 hover:bg-white/50'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Keunggulan Lokasi Section */}
+        <section className="py-24 bg-gradient-to-b from-green-50 to-white">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6">
+                Keunggulan <span className="text-green-600">Lokasi</span>
+              </h2>
+              <div className="w-32 h-2 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto rounded-full mb-8"></div>
+              <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                Lokasi strategis di jantung Pangalengan dengan akses mudah ke berbagai destinasi wisata terpopuler
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="space-y-8">
+                <div className="flex items-start space-x-4 p-6 bg-white rounded-2xl shadow-lg border border-green-100">
+                  <div className="bg-green-600 p-3 rounded-full flex-shrink-0">
+                    <StarIcon />
                   </div>
-                  <div className="p-6 text-left flex-grow flex flex-col">
-                    <h3 className="text-2xl font-bold text-orange-600">{product.name}</h3>
-                    <p className="mt-4 text-gray-600 flex-grow">{product.description}</p>
-                    {/* ===== BAGIAN INI YANG DIUBAH ===== */}
-                    <div className="mt-6 pt-4 border-t border-gray-200 flex items-center space-x-4">
-                        <a href={product.shopeeUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full px-4 py-2 text-sm font-bold text-white bg-orange-500 rounded-md hover:bg-orange-600 transition-colors">
-                            <ShopeeIcon />
-                            Shopee
-                        </a>
-                        <a href={product.tokopediaUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full px-4 py-2 text-sm font-bold text-white bg-green-600 rounded-md hover:bg-green-700 transition-colors">
-                            <TokopediaIcon />
-                            Tokopedia
-                        </a>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3">Taman Langit Pangalengan</h3>
+                    <p className="text-gray-600 text-lg">Hanya 5 menit jalan kaki! Nikmati sunrise spektakuler dan spot foto terbaik di atas awan.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4 p-6 bg-white rounded-2xl shadow-lg border border-green-100">
+                  <div className="bg-green-600 p-3 rounded-full flex-shrink-0">
+                    <StarIcon />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3">Situ Cileunca</h3>
+                    <p className="text-gray-600 text-lg">15 menit berkendara menuju danau indah dengan pemandangan pegunungan yang memukau.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4 p-6 bg-white rounded-2xl shadow-lg border border-green-100">
+                  <div className="bg-green-600 p-3 rounded-full flex-shrink-0">
+                    <StarIcon />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3">Nemo Highland</h3>
+                    <p className="text-gray-600 text-lg">20 menit perjalanan ke destinasi wisata hits dengan wahana seru dan pemandangan 360°.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4 p-6 bg-white rounded-2xl shadow-lg border border-green-100">
+                  <div className="bg-green-600 p-3 rounded-full flex-shrink-0">
+                    <StarIcon />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3">Pemandian Air Panas Gunung Wayang Windu</h3>
+                    <p className="text-gray-600 text-lg">25 menit untuk menikmati relaksasi di pemandian air panas alami yang menyehatkan.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="relative">
+                <div className="sticky top-8">
+                  <div className="bg-gradient-to-br from-green-600 to-emerald-600 text-white p-8 rounded-3xl shadow-2xl">
+                    <h3 className="text-3xl font-bold mb-6 text-center">Fasilitas Lengkap</h3>
+                    
+                    <div className="grid grid-cols-2 gap-4 mb-8">
+                      <div className="text-center p-4 bg-white/10 rounded-2xl">
+                        <div className="text-3xl mb-2">🏠</div>
+                        <div className="font-semibold">Rumah Luas</div>
+                        <div className="text-sm opacity-90">25 Orang</div>
+                      </div>
+                      <div className="text-center p-4 bg-white/10 rounded-2xl">
+                        <div className="text-3xl mb-2">🔥</div>
+                        <div className="font-semibold">Perapian</div>
+                        <div className="text-sm opacity-90">Dalam Rumah</div>
+                      </div>
+                      <div className="text-center p-4 bg-white/10 rounded-2xl">
+                        <div className="text-3xl mb-2">🍳</div>
+                        <div className="font-semibold">Dapur</div>
+                        <div className="text-sm opacity-90">Lengkap</div>
+                      </div>
+                      <div className="text-center p-4 bg-white/10 rounded-2xl">
+                        <div className="text-3xl mb-2">🚗</div>
+                        <div className="font-semibold">Parkir</div>
+                        <div className="text-sm opacity-90">Luas</div>
+                      </div>
+                    </div>
+                    
+                    <div className="text-center">
+                      <div className="text-4xl font-bold mb-2">17°C</div>
+                      <div className="text-lg opacity-90">Suhu Sejuk Setiap Hari</div>
+                      <div className="text-sm mt-2 opacity-75">Kabut turun setiap hari, udara segar pegunungan</div>
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Mengapa Memilih Kami Section */}
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-5xl mx-auto px-4 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold">Mengapa Memilih Kami?</h2>
-            <div className="w-32 h-1 bg-orange-500 mx-auto mt-6 mb-12"></div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="p-8 bg-white border border-gray-200 rounded-lg shadow-md">
-                <h3 className="text-2xl font-bold">Mesin Terbaik</h3>
-                <p className="mt-4 text-gray-600">Menggunakan mesin terbaik dalam proses pengolahan dan dijamin kebersihannya.</p>
-              </div>
-               <div className="p-8 bg-white border border-gray-200 rounded-lg shadow-md">
-                <h3 className="text-2xl font-bold">Terpercaya</h3>
-                <p className="mt-4 text-gray-600">Telah melayani konsumen dari berbagai daerah di Indonesia dan tersertifikasi P-IRT.</p>
-              </div>
-               <div className="p-8 bg-white border border-gray-200 rounded-lg shadow-md">
-                <h3 className="text-2xl font-bold">Beragam Pilihan</h3>
-                <p className="text-gray-600">Menerima berbagai pilihan produk atau jasa freeze dried food sesuai kebutuhan Anda.</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Ultimate CTA Section - Kursus */}
-        <section className="py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-4 text-center bg-gray-800 text-white p-12 rounded-2xl">
-            <h2 className="text-4xl font-extrabold">🚀 Buka Revolusi Bisnis Snack Sehat Anda!</h2>
-            <p className="mt-4 text-2xl font-semibold">
-              Kuasai Teknologi Freeze Drying dan Jadilah Pelopor di Industri yang Sedang Meledak!
-            </p>
-            <p className="mt-6 max-w-3xl mx-auto text-lg text-gray-300">
-              Ini bukan sekadar kursus. Ini adalah tiket Anda untuk menciptakan produk inovatif, membangun brand yang kuat, dan meraih keuntungan di pasar makanan sehat. Dari teori fundamental hingga strategi bisnis yang terbukti, kami siapkan Anda menjadi ahli. ✨
-            </p>
-            <a
-              href="https://wa.me/6281234567890?text=Halo%2C%20saya%20siap%20mengubah%20peluang%20menjadi%20keuntungan%20dengan%20kursus%20Freeze%20Drying."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-10 inline-block bg-orange-500 text-white font-bold py-4 px-10 rounded-lg text-lg hover:bg-orange-600 transition-colors transform hover:scale-105"
-            >
-              Daftar Sekarang Juga! 👉
-            </a>
+        {/* Trust Indicators */}
+        <section className="py-20 bg-gray-900 text-white">
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold mb-6">Dipercaya Oleh</h2>
+              <div className="w-24 h-1 bg-emerald-400 mx-auto rounded-full"></div>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              <div className="p-6">
+                <div className="text-3xl font-bold text-emerald-400 mb-2">500+</div>
+                <div className="text-gray-300">Keluarga Bahagia</div>
+              </div>
+              <div className="p-6">
+                <div className="text-3xl font-bold text-emerald-400 mb-2">100+</div>
+                <div className="text-gray-300">Perusahaan</div>
+              </div>
+              <div className="p-6">
+                <div className="text-3xl font-bold text-emerald-400 mb-2">50+</div>
+                <div className="text-gray-300">Event Sukses</div>
+              </div>
+              <div className="p-6">
+                <div className="text-3xl font-bold text-emerald-400 mb-2">4.9★</div>
+                <div className="text-gray-300">Rating Google</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Ultimate CTA Section - Booking */}
+        <section className="py-24 bg-gradient-to-br from-green-900 via-emerald-800 to-green-900 text-white">
+          <div className="max-w-6xl mx-auto px-4 text-center">
+            <div className="bg-white/10 backdrop-blur-sm p-12 lg:p-16 rounded-3xl border border-white/20">
+              <h2 className="text-4xl lg:text-6xl font-extrabold mb-6">
+                🏔️ Jangan Lewatkan Pengalaman Istimewa!
+              </h2>
+              <p className="text-2xl lg:text-3xl font-semibold mb-6 text-emerald-200">
+                Rasakan kehangatan di tengah dinginnya pegunungan Pangalengan
+              </p>
+              <p className="text-xl text-gray-300 mb-10 max-w-4xl mx-auto leading-relaxed">
+                Dari sunrise di Taman Langit hingga kehangatan perapian di malam hari, setiap momen di Homestay Bumina EENK akan menjadi kenangan tak terlupakan. Booking sekarang dan jadilah bagian dari keluarga besar kami! ✨
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <a
+                  href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20booking%20Homestay%20Bumina%20EENK%20untuk%20liburan%20yang%20tak%20terlupakan!"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center bg-green-600 text-white font-bold py-5 px-10 rounded-2xl text-xl hover:bg-green-700 transition-all duration-300 transform hover:scale-105 shadow-2xl min-w-[280px]"
+                >
+                  <WhatsAppIcon />
+                  Book via WhatsApp 🚀
+                </a>
+                
+                <a
+                  href="https://www.booking.com/hotel/id/bumina-eenk.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center bg-blue-600 text-white font-bold py-5 px-10 rounded-2xl text-xl hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-2xl min-w-[280px]"
+                >
+                  <BookingIcon />
+                  Book via Booking.com 📅
+                </a>
+              </div>
+              
+              <div className="mt-10 text-emerald-200">
+                <p className="text-lg">📞 Konsultasi Gratis • 💯 Kepuasan Terjamin • 🌟 Rating 4.9/5</p>
+              </div>
+            </div>
           </div>
         </section>
       </main>
@@ -175,3 +462,134 @@ export default function Home() {
     </>
   );
 }
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-8">
+                <div className="flex items-start space-x-4">
+                  <div className="bg-emerald-500 p-3 rounded-full flex-shrink-0">
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-3">15+ Tahun Pengalaman Hospitality</h3>
+                    <p className="text-emerald-100 text-lg leading-relaxed">
+                      Tim berpengalaman dalam memberikan pelayanan homestay terbaik dengan standar hospitalitas tinggi untuk kepuasan tamu.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <div className="bg-emerald-500 p-3 rounded-full flex-shrink-0">
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-3">Ahli Wisata Lokal Pangalengan</h3>
+                    <p className="text-emerald-100 text-lg leading-relaxed">
+                      Pengetahuan mendalam tentang destinasi wisata terbaik di Pangalengan dan sekitarnya untuk panduan lengkap tamu.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <div className="bg-emerald-500 p-3 rounded-full flex-shrink-0">
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-3">Spesialis Event & Gathering</h3>
+                    <p className="text-emerald-100 text-lg leading-relaxed">
+                      Berpengalaman menangani berbagai acara seperti reuni keluarga, gathering kantor, dan retreat perusahaan.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-6">
+                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl text-center">
+                  <div className="text-4xl font-bold text-emerald-400 mb-2">500+</div>
+                  <div className="text-emerald-100">Tamu Puas</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl text-center">
+                  <div className="text-4xl font-bold text-emerald-400 mb-2">4.9/5</div>
+                  <div className="text-emerald-100">Rating Bintang</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl text-center">
+                  <div className="text-4xl font-bold text-emerald-400 mb-2">24/7</div>
+                  <div className="text-emerald-100">Pelayanan</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl text-center">
+                  <div className="text-4xl font-bold text-emerald-400 mb-2">100%</div>
+                  <div className="text-emerald-100">Kepuasan</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Authority Section */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6">
+                Otoritas <span className="text-green-600">& Sertifikasi</span>
+              </h2>
+              <div className="w-32 h-2 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto rounded-full mb-8"></div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="text-center p-8 bg-gradient-to-b from-green-50 to-emerald-50 rounded-2xl shadow-lg">
+                <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Terdaftar Resmi</h3>
+                <p className="text-gray-600">Homestay terdaftar resmi di Dinas Pariwisata Kabupaten Bandung</p>
+              </div>
+              
+              <div className="text-center p-8 bg-gradient-to-b from-green-50 to-emerald-50 rounded-2xl shadow-lg">
+                <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Standar Kebersihan</h3>
+                <p className="text-gray-600">Memenuhi protokol kebersihan dan kesehatan sesuai standar nasional</p>
+              </div>
+              
+              <div className="text-center p-8 bg-gradient-to-b from-green-50 to-emerald-50 rounded-2xl shadow-lg">
+                <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Partner Booking.com</h3>
+                <p className="text-gray-600">Mitra resmi platform booking internasional dengan rating tinggi</p>
+              </div>
+              
+              <div className="text-center p-8 bg-gradient-to-b from-green-50 to-emerald-50 rounded-2xl shadow-lg">
+                <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Anggota PHRI</h3>
+                <p className="text-gray-600">Tergabung dalam Perhimpunan Hotel & Restoran Indonesia</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl md:text-6xl font-extrabold mb-6">
+                Testimoni <span className="text-emerald-400">Tamu</span>
+              </h2>
+              <div className="w-32 h-2 bg-gradient-to-r from-emerald-400 to-green-400 mx-auto rounded-full mb-8"></div>
