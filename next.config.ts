@@ -1,19 +1,22 @@
 import type { NextConfig } from 'next';
 
+// Nama repo GitHub lo, boss. Biar gampang diganti kalo perlu.
+const repo = 'bumina'; 
+
 const nextConfig: NextConfig = {
-  // output: 'export' WAJIB ADA buat static export
+  // Wajib ada buat static export ke GitHub Pages
   output: 'export',
   
-  // Kosongin aja karena kita deploy ke root domain (alamat utama), bukan sub-folder
-  assetPrefix: '',
-  basePath: '',
+  // Ini kunci utamanya, boss! Biar semua path ke aset (CSS, JS, gambar) bener
+  assetPrefix: `/${bumina}/`,
+  basePath: `/${bumina}`,
 
-  // Biarin aja, ini buat optimasi gambar di static export
+  // Wajib `true` buat static export, biar gambar tetep muncul
   images: {
     unoptimized: true,
   },
 
-  // TAMBAHKAN BLOK INI BUAT CUEKIN ERROR TIPE PAS BUILD
+  // Biar proses build tetep jalan meskipun ada error TypeScript, aman!
   typescript: {
     ignoreBuildErrors: true,
   },
