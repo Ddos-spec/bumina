@@ -10,6 +10,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://Ddos-spec.github.io/bumina/sitemap.xml', // Gue benerin juga URL sitemap-nya
+    sitemap: 'https://buminaeenk.com/sitemap.xml', // Gue benerin juga URL sitemap-nya
   }
 }

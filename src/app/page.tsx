@@ -8,21 +8,21 @@ const testimonials = [
   { 
     name: "Keluarga Budi Santoso", 
     feedback: "Pengalaman menginap yang luar biasa! Suasana kebun teh yang hijau dan udara sejuk pegunungan membuat kami merasa sangat nyaman. Perapian di dalam rumah benar-benar menghangatkan malam yang dingin. Highly recommended!", 
-    image: '/bumina/orang3.webp',
+    image: '/public/orang3.webp',
     rating: 5,
     location: "Jakarta"
   },
   { 
     name: "Rombongan Kantor PT Maju Bersama", 
     feedback: "Villa yang sangat luas, bisa menampung 25 orang dengan nyaman. Fasilitas lengkap, dapur bersih, dan yang paling berkesan adalah pemandangan gunung di pagi hari. Tim kami sangat puas dengan pelayanannya.", 
-    image: '/bumina/orang2.webp',
+    image: '/public/orang2.webp',
     rating: 5,
     location: "Surabaya"
   },
   { 
     name: "Keluarga Sari Wijaya", 
     feedback: "Lokasi strategis dekat Taman Langit Pangalengan! Cuma jalan kaki sebentar sudah sampai. Anak-anak senang banget bisa main di camping ground berlantai kayu. Suasana alami yang masih asri.", 
-    image: '/bumina/orang1.webp',
+    image: '/public/orang1.webp',
     rating: 5,
     location: "Bandung"
   },
@@ -30,11 +30,11 @@ const testimonials = [
 
 
 const sliderImages = [
-    '/bumina/herohome.webp',
-    '/bumina/herohome.webp', 
-    '/bumina/herohome.webp',
-    '/bumina/herohome.webp',
-    '/bumina/herohome.webp'
+    '/public/herohome.webp',
+    '/public/herohome.webp', 
+    '/public/herohome.webp',
+    '/public/herohome.webp',
+    '/public/herohome.webp'
 ];
 
 // Ikon Components

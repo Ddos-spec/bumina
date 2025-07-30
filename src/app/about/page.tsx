@@ -50,7 +50,7 @@ export default function AboutPage() {
               <div className="relative h-96 lg:h-full">
                 {/* Ganti gambar jadi salah satu gambar homestay */}
                 <Image 
-                  src="/bumina/konten2.webp" 
+                  src="/public/konten2.webp" 
                   alt="Suasana Homestay Bumina EENK" 
                   layout="fill" 
                   objectFit="cover" 

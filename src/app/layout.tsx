@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   
   // Ganti favicon ke yang lebih umum atau sesuai homestay
   icons: {
-    icon: '/bumina/favicon.ico',
+    icon: '/public/logo.wp2',
   },
 
   keywords: "homestay pangalengan, villa di pangalengan, penginapan kebun teh, sewa villa bandung, wisata pangalengan, bumina eenk, taman langit pangalengan",
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
     // Tambahin gambar utama biar cakep pas di-share
-    images: 'https://ddos-spec.github.io/bumina/homestay1.webp', 
-    url: 'https://ddos-spec.github.io/bumina/', // URL website lo
+    images: 'https://ddos-spec.github.io/public/homestay1.webp', 
+    url: 'https://ddos-spec.github.io/public/', // URL website lo
   },
   
   // Info buat pas di-share ke Twitter
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Homestay Bumina EENK - Villa Terbaik di Pangalengan",
     description: "Villa sejuk di tengah kebun teh Pangalengan dengan pemandangan gunung memukau.",
-    images: ['https://ddos-spec.github.io/bumina/homestay1.webp'], // Tambahin gambar juga
+    images: ['https://ddos-spec.github.io/public/homestay1.webp'], // Tambahin gambar juga
   },
   
   robots: {
@@ -62,7 +62,7 @@ export default function RootLayout({
               "name": "Homestay Bumina EENK",
               "description": "Villa dan penginapan sejuk di tengah kebun teh Pangalengan, Bandung, dengan kapasitas hingga 25 orang dan fasilitas perapian.",
               "url": "https://Ddos-spec.github.io/bumina",
-              "image": "https://Ddos-spec.github.io/bumina/homestay1.webp",
+              "image": "https://Ddos-spec.github.io/public/homestay1.webp",
               "telephone": "+62-812-3456-7890",
               "address": {
                 "@type": "PostalAddress",

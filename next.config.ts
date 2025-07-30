@@ -1,7 +1,7 @@
 import type { NextConfig } from 'next';
 
 // Nama repo GitHub lo, boss. Biar gampang diganti kalo perlu.
-const repo = 'bumina'; 
+const repo = 'https://buminaeenk.com/'; 
 
 const nextConfig: NextConfig = {
   // Wajib ada buat static export ke GitHub Pages

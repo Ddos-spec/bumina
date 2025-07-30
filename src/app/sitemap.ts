@@ -5,7 +5,7 @@ export const dynamic = 'force-static'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Ganti baseUrl sesuai dengan alamat GitHub Pages lo
-  const baseUrl = 'https://Ddos-spec.github.io/bumina'
+  const baseUrl = 'https://buminaeenk.com/'
 
   return [
     {
