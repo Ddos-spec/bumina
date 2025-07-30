@@ -8,53 +8,33 @@ const testimonials = [
   { 
     name: "Keluarga Budi Santoso", 
     feedback: "Pengalaman menginap yang luar biasa! Suasana kebun teh yang hijau dan udara sejuk pegunungan membuat kami merasa sangat nyaman. Perapian di dalam rumah benar-benar menghangatkan malam yang dingin. Highly recommended!", 
-    image: '/bumina/testimoni1.webp',
+    image: '/bumina/orang3.webp',
     rating: 5,
     location: "Jakarta"
   },
   { 
     name: "Rombongan Kantor PT Maju Bersama", 
     feedback: "Villa yang sangat luas, bisa menampung 25 orang dengan nyaman. Fasilitas lengkap, dapur bersih, dan yang paling berkesan adalah pemandangan gunung di pagi hari. Tim kami sangat puas dengan pelayanannya.", 
-    image: '/bumina/testimoni2.webp',
+    image: '/bumina/orang2.webp',
     rating: 5,
     location: "Surabaya"
   },
   { 
     name: "Keluarga Sari Wijaya", 
     feedback: "Lokasi strategis dekat Taman Langit Pangalengan! Cuma jalan kaki sebentar sudah sampai. Anak-anak senang banget bisa main di camping ground berlantai kayu. Suasana alami yang masih asri.", 
-    image: '/bumina/testimoni3.webp',
+    image: '/bumina/orang1.webp',
     rating: 5,
     location: "Bandung"
   },
-  { 
-    name: "Komunitas Fotografi Nusantara", 
-    feedback: "Spot foto terbaik! Hamparan kebun teh sosro yang hijau dengan latar belakang pegunungan sangat instagramable. Sunrise dan sunset view yang spektakuler. Pasti akan kembali lagi!", 
-    image: '/bumina/testimoni4.webp',
-    rating: 5,
-    location: "Yogyakarta"
-  },
-  { 
-    name: "Keluarga Besar Rahmat", 
-    feedback: "Reuni keluarga besar kami sangat berkesan di sini. Cuaca dingin 17 derajat sangat menyegarkan, parkiran luas untuk mobil dan motor. Yang paling diingat adalah kehangatan perapian saat berkumpul.", 
-    image: '/bumina/testimoni5.webp',
-    rating: 5,
-    location: "Tangerang"
-  },
-  { 
-    name: "Grup Pecinta Alam Bandung", 
-    feedback: "Akses mudah ke berbagai wisata seperti Situ Cileunca, Nemo Highland, dan Pemandian Air Panas Gunung Wayang Windu. Base camp yang sempurna untuk eksplorasi Pangalengan!", 
-    image: '/bumina/testimoni6.webp',
-    rating: 5,
-    location: "Bandung"
-  }
 ];
 
+
 const sliderImages = [
-    '/bumina/homestay1.webp',
-    '/bumina/homestay2.webp', 
-    '/bumina/homestay3.webp',
-    '/bumina/homestay4.webp',
-    '/bumina/homestay5.webp'
+    '/bumina/herohome.webp',
+    '/bumina/herohome.webp', 
+    '/bumina/herohome.webp',
+    '/bumina/herohome.webp',
+    '/bumina/herohome.webp'
 ];
 
 // Ikon Components
@@ -140,7 +120,7 @@ export default function Home() {
                 
                 <div className="mt-12 flex flex-col sm:flex-row gap-4">
                   <a
-                    href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20booking%20Homestay%20Bumina%20EENK"
+                    href="https://wa.me/6285219460779?text=Halo%2C%20saya%20ingin%20booking%20Homestay%20Bumina%20EENK"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center bg-green-600 text-white font-bold py-4 px-8 rounded-xl text-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-105 shadow-xl"
@@ -372,7 +352,7 @@ export default function Home() {
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <a
-                  href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20booking%20Homestay%20Bumina%20EENK%20untuk%20liburan%20yang%20tak%20terlupakan!"
+                  href="https://wa.me/6285219460779?text=Halo%2C%20saya%20ingin%20booking%20Homestay%20Bumina%20EENK%20untuk%20liburan%20yang%20tak%20terlupakan!"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center bg-green-600 text-white font-bold py-5 px-10 rounded-2xl text-xl hover:bg-green-700 transition-all duration-300 transform hover:scale-105 shadow-2xl min-w-[280px]"

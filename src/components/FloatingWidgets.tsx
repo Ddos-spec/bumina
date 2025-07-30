@@ -20,7 +20,7 @@ const FloatingWidgets = () => {
       name: "WhatsApp",
       icon: <WhatsAppIcon />,
       color: "bg-green-500 hover:bg-green-600",
-      link: "https://wa.me/6281234567890?text=Halo%2C%20saya%20mau%20tanya%20info%20booking%20Homestay%20Bumina%20EENK",
+      link: "https://wa.me/6285219460779?text=Halo%2C%20saya%20mau%20tanya%20info%20booking%20Homestay%20Bumina%20EENK",
     },
     {
       name: "Booking.com",

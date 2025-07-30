@@ -40,7 +40,7 @@ const Header = () => {
           {/* Tombol CTA (Call to Action) */}
           <div className="hidden md:block">
             <a
-              href="https://wa.me/6281234567890?text=Halo%2C%20saya%20mau%20tanya%20info%20booking%20Homestay%20Bumina%20EENK"
+              href="https://wa.me/6285219460779?text=Halo%2C%20saya%20mau%20tanya%20info%20booking%20Homestay%20Bumina%20EENK"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-green-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-green-700 transition-colors duration-200"
@@ -77,7 +77,7 @@ const Header = () => {
                 </Link>
               ))}
               <a
-                href="https://wa.me/6281234567890?text=Halo%2C%20saya%20mau%20tanya%20info%20booking%20Homestay%20Bumina%20EENK"
+                href="https://wa.me/6285219460779?text=Halo%2C%20saya%20mau%20tanya%20info%20booking%20Homestay%20Bumina%20EENK"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition-colors duration-200 text-center"

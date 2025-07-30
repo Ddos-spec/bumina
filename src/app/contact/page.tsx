@@ -56,7 +56,7 @@ export default function ContactPage() {
                     <div>
                       <h3 className="text-lg font-semibold text-gray-900 mb-1">Telepon / WhatsApp</h3>
                       <p className="text-gray-600">
-                        <a href="tel:+6281234567890" className="hover:text-green-600 transition-colors">
+                        <a href="tel:+6285219460779" className="hover:text-green-600 transition-colors">
                           +62 812-3456-7890
                         </a>
                       </p>
@@ -80,7 +80,7 @@ export default function ContactPage() {
                 <div className="mt-12 text-center bg-gray-50 p-8 rounded-2xl">
                     <h3 className="text-2xl font-bold text-gray-800 mb-4">Cara Tercepat Menghubungi Kami</h3>
                   <a
-                    href="https://wa.me/6281234567890?text=Halo%2C%20saya%20mau%20tanya%20info%20booking%20Homestay%20Bumina%20EENK"
+                    href="https://wa.me/6285219460779?text=Halo%2C%20saya%20mau%20tanya%20info%20booking%20Homestay%20Bumina%20EENK"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-green-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-green-700 transition-colors duration-200 inline-block"
