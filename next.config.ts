@@ -1,15 +1,15 @@
 import type { NextConfig } from 'next';
 
 // Nama repo GitHub lo, boss. Biar gampang diganti kalo perlu.
-const repo = 'https://buminaeenk.com/'; 
+const repo = 'buminaeenk.com'; 
 
 const nextConfig: NextConfig = {
   // Wajib ada buat static export ke GitHub Pages
   output: 'export',
   
   // Ini kunci utamanya, boss! Biar semua path ke aset (CSS, JS, gambar) bener
-  assetPrefix: `/${repo}/`,
-  basePath: `/${repo}`,
+  // Cukup nama reponya aja, gak pake aneh-aneh
+  basePath: '',
 
   // Wajib `true` buat static export, biar gambar tetep muncul
   images: {
