@@ -1,5 +1,5 @@
 # Nama workflow yang akan muncul di tab Actions di GitHub
-name: Deploy to Hostinger FTP
+name: Deploy to Hostinger FTP (Fast Sync)
 
 # Kapan workflow ini dijalankan
 on:
@@ -11,7 +11,6 @@ on:
 
 # Langkah-langkah yang akan dijalankan
 jobs:
-  # Nama job-nya
   build-and-deploy:
     runs-on: ubuntu-latest # Menjalankan job di mesin virtual Ubuntu
     steps:
@@ -23,7 +22,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20" # Versi Node.js yang sama
+          node-version: "20"
           cache: 'npm'
 
       # 3. Install semua dependencies
@@ -34,19 +33,18 @@ jobs:
       - name: Build Project
         run: npm run build
 
-      # 5. Deploy ke Hostinger via FTP
-      - name: Deploy to Hostinger
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      # 5. Sinkronisasi file ke Hostinger pake lftp (ini bagian yang ngebut!)
+      - name: Sync files to Hostinger
+        # INI BAGIAN YANG DIGANTI - Pake versi tag yang bener
+        uses: sebastianpopp/lftp-action@v2
         with:
-          # Alamat server FTP/SSH dari secret
-          server: ${{ secrets.FTP_SERVER }}
-          # Username FTP dari secret
-          username: ${{ secrets.FTP_USERNAME }}
-          # Password FTP dari secret
+          # Kredensial masih sama, diambil dari GitHub Secrets
+          host: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          # Folder hasil build yang akan di-upload
-          local-dir: ./out/
-          # Folder tujuan di hosting
-          server-dir: public_html/buminaeenk.com/
-          # Opsi untuk membersihkan folder tujuan sebelum upload (opsional tapi disarankan)
-          dangerous-clean-slate: true
+          # Path folder tujuan di hosting
+          remoteDir: public_html/buminaeenk.com/
+          # Path folder sumber hasil build
+          localDir: out/
+          # Opsi buat lftp: --delete (hapus file lama), --mirror (sinkronisasi), --verbose (tampilin log)
+          options: "-e \"set ftp:ssl-allow no;\" --delete --mirror --verbose"
