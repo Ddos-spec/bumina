@@ -1,40 +1,51 @@
 # Nama workflow yang akan muncul di tab Actions di GitHub
-name: Deploy to cPanel (FTP)
+name: Deploy to Hostinger FTP
 
 # Kapan workflow ini dijalankan
 on:
+  # Dijalankan setiap kali ada push ke branch 'main'
   push:
     branches: ["main"]
+  # Bisa juga dijalankan manual dari tab Actions
   workflow_dispatch:
 
+# Langkah-langkah yang akan dijalankan
 jobs:
+  # Nama job-nya
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # Menjalankan job di mesin virtual Ubuntu
     steps:
+      # 1. Mengambil kode dari repository
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      # 2. Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "20" # Versi Node.js yang sama
           cache: 'npm'
 
+      # 3. Install semua dependencies
       - name: Install Dependencies
         run: npm install
 
+      # 4. Build project jadi file statis di folder 'out'
       - name: Build Project
         run: npm run build
 
-      - name: Deploy to cPanel via FTP
-        uses: appleboy/ftp-action@v1.0.3 # Menggunakan versi stabil
+      # 5. Deploy ke Hostinger via FTP
+      - name: Deploy to Hostinger
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          host: ${{ secrets.FTP_SERVER }}
+          # Alamat server FTP/SSH dari secret
+          server: ${{ secrets.FTP_SERVER }}
+          # Username FTP dari secret
           username: ${{ secrets.FTP_USERNAME }}
+          # Password FTP dari secret
           password: ${{ secrets.FTP_PASSWORD }}
-          port: 21 # Port FTP/FTPS standar
-          # Hapus 'script' dan gunakan 'source' dan 'target' untuk sinkronisasi
-          source: out/
-          target: public_html/buminaeenk.com/
-          # Opsi tambahan untuk membersihkan direktori target sebelum upload
-          clean: true
+          # Folder hasil build yang akan di-upload
+          local-dir: ./out/
+          # Folder tujuan di hosting
+          server-dir: public_html/buminaeenk.com/
+
