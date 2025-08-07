@@ -8,7 +8,7 @@ const Footer = () => {
           {/* Info Perusahaan */}
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-2xl font-bold text-green-400 mb-4">
-              Homestay Bumina EENKa
+              Homestay Bumina EENK
             </h3>
             <p className="text-gray-300 mb-4">
               Penginapan nyaman di tengah sejuknya kebun teh Pangalengan, Bandung. Tempat terbaik untuk liburan keluarga dan rombongan.
