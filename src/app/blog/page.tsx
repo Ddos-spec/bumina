@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { blogPosts, type BlogPost } from "@/lib/data";
+import { getAllArticles, type Article } from "@/lib/articleHelpers";
 
 // Metadata diubah biar sesuai tema homestay & SEO-friendly
 export const metadata = {
@@ -9,7 +9,10 @@ export const metadata = {
   description: "Temukan panduan, tips liburan, dan rekomendasi tempat wisata terbaik di Pangalengan dari blog Homestay Bumina EENK.",
 };
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  // Fetch articles from JSON file
+  const articles = await getAllArticles();
+
   return (
     <>
       <Header />
@@ -28,7 +31,7 @@ export default function BlogPage() {
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {blogPosts.map((post: BlogPost) => (
+              {articles.map((post: Article) => (
                 <article
                   key={post.id}
                   className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
@@ -48,7 +51,13 @@ export default function BlogPage() {
                     </div>
 
                     <div className="text-center mb-4">
-                      <div className="text-6xl mb-4">{post.image}</div>
+                      <div className="w-full h-48 relative mb-4 rounded-lg overflow-hidden">
+                        <img 
+                          src={post.image} 
+                          alt={post.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                     </div>
 
                     <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">

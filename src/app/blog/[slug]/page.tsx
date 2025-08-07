@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { blogPosts, type BlogPost } from "@/lib/data";
+import { getAllArticles, getArticleBySlug, type Article } from "@/lib/articleHelpers";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -9,14 +9,15 @@ type PageProps = {
   };
 };
 
-export function generateStaticParams() {
-  return blogPosts.map((post: BlogPost) => ({
+export async function generateStaticParams() {
+  const articles = await getAllArticles();
+  return articles.map((post: Article) => ({
     slug: post.slug,
   }));
 }
 
-export function generateMetadata({ params }: PageProps) {
-  const post = blogPosts.find((p: BlogPost) => p.slug === params.slug);
+export async function generateMetadata({ params }: PageProps) {
+  const post = await getArticleBySlug(params.slug);
   
   if (!post) {
     return {
@@ -31,9 +32,9 @@ export function generateMetadata({ params }: PageProps) {
   };
 }
 
-export default function BlogPostDetail({ params }: PageProps) {
+export default async function BlogPostDetail({ params }: PageProps) {
   const { slug } = params;
-  const post = blogPosts.find((p: BlogPost) => p.slug === slug);
+  const post = await getArticleBySlug(slug);
 
   if (!post) {
     notFound();
@@ -46,6 +47,13 @@ export default function BlogPostDetail({ params }: PageProps) {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <article>
             <header className="mb-8 text-center border-b pb-8">
+              <div className="w-full h-64 relative mb-6 rounded-lg overflow-hidden">
+                <img 
+                  src={post.image} 
+                  alt={post.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <p className="text-base text-gray-500 mb-2">
                 <time dateTime={post.date}>
                   {new Date(post.date).toLocaleDateString("id-ID", {
@@ -64,8 +72,7 @@ export default function BlogPostDetail({ params }: PageProps) {
             
             <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
               <p className="lead text-xl mb-6">{post.excerpt}</p>
-              {/* Di sini kita tampilkan konten lengkapnya */}
-              <p>{post.content}</p>
+              <div className="whitespace-pre-wrap">{post.content}</div>
             </div>
           </article>
         </div>
