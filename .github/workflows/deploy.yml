@@ -35,7 +35,7 @@ jobs:
 
       # 5. Sinkronisasi file ke Hostinger pake action yang teruji
       - name: Sync files to Hostinger
-        uses: appleboy/ftp-action@master
+        uses: appleboy/ftp-action@v1.0.3
         with:
           host: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
