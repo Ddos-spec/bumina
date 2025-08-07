@@ -33,18 +33,13 @@ jobs:
       - name: Build Project
         run: npm run build
 
-      # 5. Sinkronisasi file ke Hostinger pake lftp (ini bagian yang ngebut!)
+      # 5. Sinkronisasi file ke Hostinger pake action yang teruji
       - name: Sync files to Hostinger
-        # INI BAGIAN YANG DIGANTI - Pake versi tag yang bener
-        uses: sebastianpopp/lftp-action@v2
+        uses: appleboy/ftp-action@v1.0.0 # Menggunakan versi spesifik
         with:
-          # Kredensial masih sama, diambil dari GitHub Secrets
           host: ${{ secrets.FTP_SERVER }}
-          user: ${{ secrets.FTP_USERNAME }}
+          username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          # Path folder tujuan di hosting
-          remoteDir: public_html/buminaeenk.com/
-          # Path folder sumber hasil build
-          localDir: out/
-          # Opsi buat lftp: --delete (hapus file lama), --mirror (sinkronisasi), --verbose (tampilin log)
-          options: "-e \"set ftp:ssl-allow no;\" --delete --mirror --verbose"
+          script: |
+            set ftp:ssl-allow no;
+            mirror --delete --reverse --verbose out/ public_html/buminaeenk.com/
