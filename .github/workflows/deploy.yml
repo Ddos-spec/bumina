@@ -35,11 +35,14 @@ jobs:
 
       # 5. Sinkronisasi file ke Hostinger pake action yang teruji
       - name: Sync files to Hostinger
-        uses: appleboy/ftp-action@v1.0.0 # Menggunakan versi spesifik
+        uses: appleboy/ftp-action@master
         with:
           host: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          port: 21 # Port FTP standar, bisa diubah jika perlu
           script: |
-            set ftp:ssl-allow no;
+            # Pastikan direktori target ada, -p berarti "buat jika belum ada"
+            mkdir -p public_html/buminaeenk.com
+            # Sinkronisasi folder 'out' lokal ke direktori remote
             mirror --delete --reverse --verbose out/ public_html/buminaeenk.com/
