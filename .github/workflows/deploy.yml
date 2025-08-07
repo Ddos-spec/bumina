@@ -1,48 +1,40 @@
 # Nama workflow yang akan muncul di tab Actions di GitHub
-name: Deploy to Hostinger FTP (Fast Sync)
+name: Deploy to cPanel (FTP)
 
 # Kapan workflow ini dijalankan
 on:
-  # Dijalankan setiap kali ada push ke branch 'main'
   push:
     branches: ["main"]
-  # Bisa juga dijalankan manual dari tab Actions
   workflow_dispatch:
 
-# Langkah-langkah yang akan dijalankan
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest # Menjalankan job di mesin virtual Ubuntu
+    runs-on: ubuntu-latest
     steps:
-      # 1. Mengambil kode dari repository
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # 2. Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: 'npm'
 
-      # 3. Install semua dependencies
       - name: Install Dependencies
         run: npm install
 
-      # 4. Build project jadi file statis di folder 'out'
       - name: Build Project
         run: npm run build
 
-      # 5. Sinkronisasi file ke Hostinger pake action yang teruji
-      - name: Sync files to Hostinger
-        uses: appleboy/ftp-action@v1.0.3
+      - name: Deploy to cPanel via FTP
+        uses: appleboy/ftp-action@v1.0.3 # Menggunakan versi stabil
         with:
           host: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: 21 # Port FTP standar, bisa diubah jika perlu
-          script: |
-            # Pastikan direktori target ada, -p berarti "buat jika belum ada"
-            mkdir -p public_html/buminaeenk.com
-            # Sinkronisasi folder 'out' lokal ke direktori remote
-            mirror --delete --reverse --verbose out/ public_html/buminaeenk.com/
+          port: 21 # Port FTP/FTPS standar
+          # Hapus 'script' dan gunakan 'source' dan 'target' untuk sinkronisasi
+          source: out/
+          target: public_html/buminaeenk.com/
+          # Opsi tambahan untuk membersihkan direktori target sebelum upload
+          clean: true
