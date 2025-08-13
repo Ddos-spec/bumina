@@ -43,8 +43,8 @@ export const metadata: Metadata = {
   },
 };
 
-// Structured data as a properly serialized JSON string
-const structuredData = `{
+// Structured data as a JavaScript object to ensure consistent stringification
+const structuredDataObject = {
   "@context": "https://schema.org",
   "@type": "LodgingBusiness",
   "name": "Homestay Bumina EENK",
@@ -66,7 +66,7 @@ const structuredData = `{
     "longitude": 107.5958
   },
   "priceRange": "$$"
-}`;
+};
 
 export default function RootLayout({
   children,
@@ -80,7 +80,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: structuredData,
+            __html: JSON.stringify(structuredDataObject),
           }}
         />
       </head>
