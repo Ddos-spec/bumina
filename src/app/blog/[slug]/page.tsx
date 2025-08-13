@@ -5,8 +5,11 @@ import Footer from "@/components/Footer";
 import { generateMetadataObject, SchemaOrg } from "@/lib/seo";
 import { Metadata } from "next";
 
-// The shared PageProps type was causing issues with Next.js's type generation.
-// Defining props inline for generateMetadata and the page component resolves the error.
+// Define a clear PageProps type to guide Next.js type inference.
+type PageProps = {
+  params: { slug: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
+};
 
 export async function generateStaticParams() {
   const articles = await getAllArticles();
@@ -15,7 +18,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const post = await getArticleBySlug(params.slug);
   
   if (!post) {
@@ -30,7 +33,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   });
 }
 
-export default async function BlogPostDetail({ params }: { params: { slug: string } }) {
+export default async function BlogPostDetail({ params }: PageProps) {
   const { slug } = params;
   const post = await getArticleBySlug(slug);
 
