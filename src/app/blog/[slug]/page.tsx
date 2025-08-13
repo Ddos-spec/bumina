@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { generateMetadataObject, SchemaOrg } from "@/lib/seo";
 import { Metadata } from "next";
 
+// Define a clear type for the page props to ensure consistency.
 type PageProps = {
   params: {
     slug: string;
@@ -18,6 +19,7 @@ export async function generateStaticParams() {
   }));
 }
 
+// Use the consistent PageProps type here.
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const post = await getArticleBySlug(params.slug);
   
@@ -29,10 +31,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: post.title,
     description: post.excerpt,
     canonical: `/blog/${post.slug}`,
-    image: post.image, // Menggunakan gambar spesifik artikel untuk social sharing
+    image: post.image,
   });
 }
 
+// And use the same PageProps type for the component.
 export default async function BlogPostDetail({ params }: PageProps) {
   const { slug } = params;
   const post = await getArticleBySlug(slug);
@@ -43,7 +46,6 @@ export default async function BlogPostDetail({ params }: PageProps) {
 
   return (
     <>
-      {/* Menyuntikkan Schema Artikel untuk Rich Snippets di Google */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(SchemaOrg.article(post)) }}
