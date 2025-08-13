@@ -43,6 +43,33 @@ export const metadata: Metadata = {
   },
 };
 
+// Structured data as a properly serialized JSON string
+const structuredData = JSON.stringify({
+  "@context": "https://schema.org",
+  // Diubah jadi LodgingBusiness biar lebih spesifik buat SEO
+  "@type": "LodgingBusiness",
+  "name": "Homestay Bumina EENK",
+  "description": "Villa dan penginapan sejuk di tengah kebun teh Pangalengan, Bandung, dengan kapasitas hingga 25 orang dan fasilitas perapian.",
+  "url": "/bumina",
+  "image": "/homestay1.webp",
+  "telephone": "+62-812-3456-7890",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Jl. Kebun Teh Sosro",
+    "addressLocality": "Pangalengan",
+    "addressRegion": "Jawa Barat",
+    "postalCode": "40378",
+    "addressCountry": "ID"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    // Ini koordinat kira-kira, ganti pake yang asli ya
+    "latitude": -7.2188,
+    "longitude": 107.5958
+  },
+  "priceRange": "$$", // Ganti sesuai harga (contoh: $$ = moderat)
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -55,31 +82,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              // Diubah jadi LodgingBusiness biar lebih spesifik buat SEO
-              "@type": "LodgingBusiness",
-              "name": "Homestay Bumina EENK",
-              "description": "Villa dan penginapan sejuk di tengah kebun teh Pangalengan, Bandung, dengan kapasitas hingga 25 orang dan fasilitas perapian.",
-              "url": "/bumina",
-              "image": "/homestay1.webp",
-              "telephone": "+62-812-3456-7890",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Jl. Kebun Teh Sosro",
-                "addressLocality": "Pangalengan",
-                "addressRegion": "Jawa Barat",
-                "postalCode": "40378",
-                "addressCountry": "ID"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                // Ini koordinat kira-kira, ganti pake yang asli ya
-                "latitude": "-7.2188",
-                "longitude": "107.5958"
-              },
-              "priceRange": "$$", // Ganti sesuai harga (contoh: $$ = moderat)
-            })
+            __html: structuredData,
           }}
         />
       </head>

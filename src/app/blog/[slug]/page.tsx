@@ -4,9 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 type PageProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 export async function generateStaticParams() {
@@ -16,8 +16,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: PageProps) {
-  const post = await getArticleBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  const post = await getArticleBySlug(resolvedParams.slug);
   
   if (!post) {
     return {
@@ -32,8 +33,9 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
-export default async function BlogPostDetail({ params }: PageProps) {
-  const { slug } = params;
+export default async function BlogPostDetail({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  const { slug } = resolvedParams;
   const post = await getArticleBySlug(slug);
 
   if (!post) {
