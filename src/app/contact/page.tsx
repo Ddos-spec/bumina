@@ -1,15 +1,41 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { generateMetadataObject, SchemaOrg } from "@/lib/seo";
+import { Metadata } from "next";
 
-// Metadata diubah total biar relevan sama homestay
-export const metadata = {
-  title: "Kontak & Lokasi - Homestay Bumina EENK di Pangalengan",
+// --- METADATA SPESIFIK UNTUK HALAMAN KONTAK ---
+export const metadata: Metadata = generateMetadataObject({
+  title: "Kontak & Lokasi Homestay Bumina EENK",
   description: "Hubungi kami untuk booking atau informasi lebih lanjut mengenai Homestay Bumina EENK. Temukan lokasi kami di Pangalengan, Bandung.",
-};
+  canonical: "/contact",
+});
+
+const faqQuestions = [
+  {
+    question: "Berapa kapasitas maksimal homestay?",
+    answer: "Homestay kami dapat menampung hingga 25 orang dengan nyaman, cocok untuk keluarga besar atau rombongan kantor.",
+  },
+  {
+    question: "Fasilitas apa saja yang tersedia?",
+    answer: "Kami menyediakan dapur lengkap, perapian hangat, parkir luas, dan tentunya pemandangan kebun teh dan pegunungan yang indah.",
+  },
+  {
+    question: "Bagaimana cara melakukan booking?",
+    answer: "Anda bisa booking langsung melalui WhatsApp untuk respon tercepat atau melalui platform Booking.com. Link tersedia di halaman utama.",
+  },
+  {
+    question: "Apakah boleh membawa hewan peliharaan?",
+    answer: "Untuk saat ini, kami belum bisa mengakomodasi hewan peliharaan untuk menjaga kenyamanan semua tamu.",
+  },
+];
 
 export default function ContactPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(SchemaOrg.faqPage(faqQuestions)) }}
+      />
       <Header />
       <main className="min-h-screen">
         {/* Hero Section */}
@@ -57,7 +83,7 @@ export default function ContactPage() {
                       <h3 className="text-lg font-semibold text-gray-900 mb-1">Telepon / WhatsApp</h3>
                       <p className="text-gray-600">
                         <a href="tel:+6285219460779" className="hover:text-green-600 transition-colors">
-                          +62 812-3456-7890
+                          +62 852-1946-0779
                         </a>
                       </p>
                     </div>
@@ -100,38 +126,16 @@ export default function ContactPage() {
                     Pertanyaan Umum (FAQ)
                   </h2>
                   <div className="space-y-6">
-                    <div className="bg-white rounded-lg p-6 shadow-md">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                        Berapa kapasitas maksimal homestay?
-                      </h3>
-                      <p className="text-gray-600">
-                        Homestay kami dapat menampung hingga 25 orang dengan nyaman, cocok untuk keluarga besar atau rombongan kantor.
-                      </p>
-                    </div>
-                    <div className="bg-white rounded-lg p-6 shadow-md">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                        Fasilitas apa saja yang tersedia?
-                      </h3>
-                      <p className="text-gray-600">
-                        Kami menyediakan dapur lengkap, perapian hangat, parkir luas, dan tentunya pemandangan kebun teh dan pegunungan yang indah.
-                      </p>
-                    </div>
-                    <div className="bg-white rounded-lg p-6 shadow-md">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                        Bagaimana cara melakukan booking?
-                      </h3>
-                      <p className="text-gray-600">
-                        Anda bisa booking langsung melalui WhatsApp untuk respon tercepat atau melalui platform Booking.com. Link tersedia di halaman utama.
-                      </p>
-                    </div>
-                    <div className="bg-white rounded-lg p-6 shadow-md">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                        Apakah boleh membawa hewan peliharaan?
-                      </h3>
-                      <p className="text-gray-600">
-                        Untuk saat ini, kami belum bisa mengakomodasi hewan peliharaan untuk menjaga kenyamanan semua tamu.
-                      </p>
-                    </div>
+                    {faqQuestions.map((faq, index) => (
+                      <div key={index} className="bg-white rounded-lg p-6 shadow-md">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                          {faq.question}
+                        </h3>
+                        <p className="text-gray-600">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>

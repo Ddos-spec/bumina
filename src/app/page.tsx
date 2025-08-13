@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SchemaOrg } from '@/lib/seo'; // Import SchemaOrg helper
 
 const testimonials = [
   { 
@@ -86,6 +87,10 @@ export default function Home() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(SchemaOrg.lodgingBusiness()) }}
+      />
       <Header />
       <main className="bg-white text-gray-800">
         {/* Hero Section */}
