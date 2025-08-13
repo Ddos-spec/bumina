@@ -2,15 +2,17 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getAllArticles, type Article } from "@/lib/articleHelpers";
+import { generateMetadataObject } from "@/lib/seo";
+import { Metadata } from "next";
 
-// Metadata diubah biar sesuai tema homestay & SEO-friendly
-export const metadata = {
+// --- METADATA SEO TERPUSAT ---
+export const metadata: Metadata = generateMetadataObject({
   title: "Blog Wisata Pangalengan - Tips & Rekomendasi dari Bumina EENK",
   description: "Temukan panduan, tips liburan, dan rekomendasi tempat wisata terbaik di Pangalengan dari blog Homestay Bumina EENK.",
-};
+  canonical: "/blog",
+});
 
 export default async function BlogPage() {
-  // Fetch articles from JSON file
   const articles = await getAllArticles();
 
   return (

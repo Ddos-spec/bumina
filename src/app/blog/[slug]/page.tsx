@@ -2,11 +2,13 @@ import { notFound } from "next/navigation";
 import { getAllArticles, getArticleBySlug, type Article } from "@/lib/articleHelpers";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { generateMetadataObject, SchemaOrg } from "@/lib/seo";
+import { Metadata } from "next";
 
 type PageProps = {
-  params: Promise<{
+  params: {
     slug: string;
-  }>;
+  };
 };
 
 export async function generateStaticParams() {
@@ -16,26 +18,23 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const resolvedParams = await params;
-  const post = await getArticleBySlug(resolvedParams.slug);
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const post = await getArticleBySlug(params.slug);
   
   if (!post) {
-    return {
-      title: "Artikel Tidak Ditemukan",
-    };
+    return generateMetadataObject({ title: "Artikel Tidak Ditemukan" });
   }
 
-  // Judul halaman diubah biar relevan
-  return {
-    title: `${post.title} - Bumina EENK Blog`,
+  return generateMetadataObject({
+    title: post.title,
     description: post.excerpt,
-  };
+    canonical: `/blog/${post.slug}`,
+    image: post.image, // Menggunakan gambar spesifik artikel untuk social sharing
+  });
 }
 
-export default async function BlogPostDetail({ params }: { params: Promise<{ slug: string }> }) {
-  const resolvedParams = await params;
-  const { slug } = resolvedParams;
+export default async function BlogPostDetail({ params }: PageProps) {
+  const { slug } = params;
   const post = await getArticleBySlug(slug);
 
   if (!post) {
@@ -44,6 +43,11 @@ export default async function BlogPostDetail({ params }: { params: Promise<{ slu
 
   return (
     <>
+      {/* Menyuntikkan Schema Artikel untuk Rich Snippets di Google */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(SchemaOrg.article(post)) }}
+      />
       <Header />
       <main className="min-h-screen bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,12 +1,16 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import Image from "next/image"; // Jangan lupa import Image
+import Image from "next/image";
+import { generateMetadataObject } from "@/lib/seo";
+import { Metadata } from "next";
 
-export const metadata = {
+// --- METADATA SEO TERPUSAT ---
+export const metadata: Metadata = generateMetadataObject({
   title: "Tentang Kami - Homestay Bumina EENK | Cerita di Balik Villa Pangalengan",
   description: "Pelajari kisah Homestay Bumina EENK, visi kami untuk memberikan pengalaman menginap terbaik di Pangalengan, dan komitmen kami pada kenyamanan dan kehangatan.",
-};
+  canonical: "/about",
+});
 
 export default function AboutPage() {
   return (
@@ -48,7 +52,6 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="relative h-96 lg:h-full">
-                {/* Ganti gambar jadi salah satu gambar homestay */}
                 <Image 
                   src="/konten2.webp" 
                   alt="Suasana Homestay Bumina EENK" 
