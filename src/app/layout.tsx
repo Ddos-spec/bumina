@@ -44,9 +44,8 @@ export const metadata: Metadata = {
 };
 
 // Structured data as a properly serialized JSON string
-const structuredData = JSON.stringify({
+const structuredData = `{
   "@context": "https://schema.org",
-  // Diubah jadi LodgingBusiness biar lebih spesifik buat SEO
   "@type": "LodgingBusiness",
   "name": "Homestay Bumina EENK",
   "description": "Villa dan penginapan sejuk di tengah kebun teh Pangalengan, Bandung, dengan kapasitas hingga 25 orang dan fasilitas perapian.",
@@ -63,12 +62,11 @@ const structuredData = JSON.stringify({
   },
   "geo": {
     "@type": "GeoCoordinates",
-    // Ini koordinat kira-kira, ganti pake yang asli ya
     "latitude": -7.2188,
     "longitude": 107.5958
   },
-  "priceRange": "$$", // Ganti sesuai harga (contoh: $$ = moderat)
-});
+  "priceRange": "$$"
+}`;
 
 export default function RootLayout({
   children,
