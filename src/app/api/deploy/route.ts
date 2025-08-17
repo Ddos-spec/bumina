@@ -107,6 +107,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
  * GET /api/deploy
  * Health check endpoint for N8N to verify webhook is working
  */
+// This endpoint remains for health check; article APIs were removed as per content strategy.
 export async function GET(): Promise<NextResponse> {
   const response: ApiResponse = {
     success: true,
