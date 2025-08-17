@@ -17,8 +17,8 @@
     "remark-parse": "^11",
     "remark-rehype": "^11",
     "rehype-stringify": "^10",
-    "rehype-slug": "^7",
-    "rehype-autolink-headings": "^7"
+    "rehype-slug": "^6",
+    "rehype-autolink-headings": "^6"
   },
   "devDependencies": {
     "typescript": "^5",
