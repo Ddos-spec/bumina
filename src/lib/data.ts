@@ -1,6 +1,6 @@
 // src/lib/data.ts
 // DEPRECATED: This file is kept for backward compatibility
-// New articles are managed through articles.json and articleHelpers.ts
+// New articles are managed through local Markdown collection in /_posts using articleHelpers.ts
 
 import { getAllArticles, type Article } from './articleHelpers';
 
