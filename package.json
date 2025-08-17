@@ -9,9 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "next": "15.4.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.4.2"
+    "gray-matter": "^4",
+    "unified": "^11",
+    "remark-parse": "^11",
+    "remark-rehype": "^11",
+    "rehype-stringify": "^10",
+    "rehype-slug": "^7",
+    "rehype-autolink-headings": "^7"
   },
   "devDependencies": {
     "typescript": "^5",

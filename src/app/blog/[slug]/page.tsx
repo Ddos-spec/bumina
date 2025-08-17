@@ -75,10 +75,9 @@ export default async function BlogPostDetail({ params }: PageProps) {
               </h1>
             </header>
             
-            <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-              <p className="lead text-xl mb-6">{post.excerpt}</p>
-              <div className="whitespace-pre-wrap">{post.content}</div>
-            </div>
+            <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed"
+                 dangerouslySetInnerHTML={{ __html: post.content }}
+            />
           </article>
         </div>
       </main>
