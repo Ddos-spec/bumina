@@ -1,5 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { type ApiResponse } from '@/lib/articleHelpers';
+// import { type ApiResponse } from '@/lib/articleHelpers';
+
+interface ApiResponse {
+  success: boolean;
+  error?: string;
+  message?: string;
+  data?: any;
+}
 
 interface DeployRequest {
   action: string;
