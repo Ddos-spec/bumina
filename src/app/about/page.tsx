@@ -55,9 +55,9 @@ export default function AboutPage() {
                 <Image 
                   src="/konten2.webp" 
                   alt="Suasana Homestay Bumina EENK" 
-                  layout="fill" 
-                  objectFit="cover" 
-                  className="rounded-2xl shadow-xl"
+                  fill
+                  className="object-cover rounded-2xl shadow-xl"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                   unoptimized
                 />
               </div>
@@ -154,12 +154,14 @@ export default function AboutPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-green-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors duration-200"
+                aria-label="Booking via WhatsApp"
               >
                 Booking via WhatsApp
               </a>
               <Link
                 href="/contact"
                 className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-green-600 transition-colors duration-200"
+                aria-label="Lihat Kontak dan Lokasi"
               >
                 Lihat Kontak & Lokasi
               </Link>

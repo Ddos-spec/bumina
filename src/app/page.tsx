@@ -151,7 +151,15 @@ export default function Home() {
                 <div className="w-full h-96 lg:h-[600px] relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20">
                   {sliderImages.map((src, index) => (
                     <div key={src} className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}>
-                      <Image src={src} alt={`Homestay Bumina EENK ${index + 1}`} layout="fill" objectFit="cover" unoptimized />
+                      <Image 
+                        src={src} 
+                        alt={`Homestay Bumina EENK ${index + 1}`} 
+                        fill 
+                        className="object-cover"
+                        sizes="(min-width: 1024px) 50vw, 100vw"
+                        priority={index === 0}
+                        unoptimized 
+                      />
                     </div>
                   ))}
                   <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-3 z-10">
@@ -162,6 +170,7 @@ export default function Home() {
                         className={`block w-4 h-4 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-emerald-400 scale-125' : 'bg-white/50 hover:bg-white/75'}`}
                         aria-label={`Pindah ke slide ${index + 1}`}
                         aria-pressed={index === currentSlide}
+                        aria-current={index === currentSlide ? 'true' : undefined}
                       />
                     ))}
                   </div>
@@ -238,7 +247,7 @@ export default function Home() {
                       <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 lg:p-12 max-w-4xl mx-auto">
                         <div className="flex flex-col lg:flex-row items-center gap-8">
                           <div className="w-32 h-32 relative rounded-full overflow-hidden flex-shrink-0 border-4 border-emerald-400">
-                            <Image src={testimonial.image} alt={testimonial.name} layout="fill" objectFit="cover" unoptimized />
+                            <Image src={testimonial.image} alt={testimonial.name} fill className="object-cover" unoptimized />
                           </div>
                           
                           <div className="flex-1 text-center lg:text-left">
@@ -272,6 +281,7 @@ export default function Home() {
                     }`}
                     aria-label={`Pindah ke testimoni ${index + 1}`}
                     aria-pressed={index === currentTestimonial}
+                    aria-current={index === currentTestimonial ? 'true' : undefined}
                     role="tab"
                   />
                 ))}
