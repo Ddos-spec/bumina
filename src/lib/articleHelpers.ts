@@ -20,7 +20,8 @@ export interface Article {
 }
 
 // Directory for local markdown collection
-const POSTS_DIR = path.join(process.cwd(), '_posts');
+// Directory for local markdown collection
+const POSTS_DIR = path.join(process.cwd(), 'src', '_posts');
 
 // Ensure required frontmatter exists
 function assertFrontmatter(data: any, slug: string) {
