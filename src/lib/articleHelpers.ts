@@ -24,7 +24,7 @@ export interface Article {
 const POSTS_DIR = path.join(process.cwd(), 'src', '_posts');
 
 // Ensure required frontmatter exists
-function assertFrontmatter(data: any, slug: string) {
+function assertFrontmatter(data: { [key: string]: unknown }, slug:string) {
   const required = ['title', 'date', 'category', 'excerpt', 'image'];
   const missing = required.filter((k) => !data?.[k]);
   if (missing.length) {

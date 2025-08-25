@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { type Article } from './articleHelpers';
 
 // --- KONFIGURASI SEO GLOBAL ---
 const siteConfig = {
@@ -139,7 +140,7 @@ export const SchemaOrg = {
       },
     })),
   }),
-  article: (post: any) => ({
+  article: (post: Article) => ({
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: post.title,
