@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next'
 import { getAllArticles } from '@/lib/articleHelpers'
 
+export const dynamic = 'force-static'
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://buminaeenk.com'
 
