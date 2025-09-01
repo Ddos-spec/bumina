@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { getAllArticles, type Article } from "@/lib/articleHelpers";
+import { getAllArticles, type Article } from "@/blog/articleHelpers";
 import { generateMetadataObject } from "@/lib/seo";
 import { Metadata } from "next";
 

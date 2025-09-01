@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getAllArticles, getArticleBySlug, type Article } from "@/lib/articleHelpers";
+import { getAllArticles, getArticleBySlug, type Article } from "@/blog/articleHelpers";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { generateMetadataObject, SchemaOrg } from "@/lib/seo";
