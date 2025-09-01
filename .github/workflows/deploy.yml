@@ -27,8 +27,9 @@ jobs:
           cache: 'pnpm'
 
       # Tambahkan langkah ini untuk menginstal pnpm
-      - name: Install pnpm
-        run: npm install -g pnpm
+                node-version: "20"
+          cache: 'pnpm'
+          package-manager: 'pnpm'
 
       # 3. Install semua dependencies
       - name: Install Dependencies
