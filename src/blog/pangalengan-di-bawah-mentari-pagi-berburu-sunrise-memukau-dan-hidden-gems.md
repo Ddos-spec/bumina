@@ -3,7 +3,7 @@ title: "Pangalengan di Bawah Mentari Pagi: Berburu Sunrise Memukau dan Hidden Ge
 excerpt: "Pangalengan bukan hanya tentang Situ Cileunca, lho! Ada banyak spot sunrise menakjubkan dan tempat tersembunyi yang wajib kamu eksplor. Yuk, simak tipsnya!"
 category: "Destinasi"
 date: "2025-08-27"
-image: "/images/blog/sunrise-pangalengan.jpg"
+image: "/pemandangan1.webp"
 ---
 
 # Pangalengan di Bawah Mentari Pagi: Berburu Sunrise Memukau dan Hidden Gems!

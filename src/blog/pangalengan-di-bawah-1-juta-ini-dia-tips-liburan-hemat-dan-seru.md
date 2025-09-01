@@ -3,7 +3,7 @@ title: "Pangalengan di Bawah 1 Juta? Ini Dia Tips Liburan Hemat dan Seru!"
 excerpt: "Siapa bilang liburan ke Pangalengan mahal? Dengan tips ini, kamu bisa menikmati keindahan alamnya tanpa bikin kantong jebol. Plus, rekomendasi tempat menginap yang cozy!"
 category: "Tips Liburan"
 date: "2025-08-26"
-image: "/images/blog/situ-cileunca-pangalengan.jpg"
+image: "/pemandangan3.webp"
 ---
 
 # Pangalengan di Bawah 1 Juta? Ini Dia Tips Liburan Hemat dan Seru!

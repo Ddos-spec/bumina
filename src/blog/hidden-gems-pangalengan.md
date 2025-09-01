@@ -3,7 +3,7 @@ title: "Selain Kebun Teh, Ini 3 Hidden Gems di Pangalengan"
 date: "2024-07-15"
 category: "Hidden Gems"
 excerpt: "Bosen sama kebun teh? Tenang, Pangalengan masih punya banyak 'harta karun' tersembunyi. Dari curug sampai penangkaran rusa, ini dia tempatnya."
-image: "https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg"
+image: "/pemandangan1.webp"
 ---
 
 Coba deh mampir ke **Penangkaran Rusa Kertamanah**, di sana lo bisa interaksi langsung sama rusa-rusa jinak.

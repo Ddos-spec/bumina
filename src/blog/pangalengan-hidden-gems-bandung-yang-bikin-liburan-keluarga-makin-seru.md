@@ -3,7 +3,7 @@ title: "Pangalengan: Hidden Gems Bandung yang Bikin Liburan Keluarga Makin Seru!
 excerpt: "Pangalengan menawarkan lebih dari sekadar kebun teh. Temukan hidden gems dan ide liburan keluarga tak terlupakan di sini!"
 category: "Destinasi"
 date: "2025-08-28"
-image: "/images/blog/situ-cileunca-pangalengan.jpg"
+image: "/pemandangan2.webp"
 ---
 
 Pangalengan, Bandung, seringkali hanya terlintas sebagai hamparan kebun teh yang hijau. Padahal, lebih dari itu, kawasan ini menyimpan segudang pesona yang siap memanjakan mata dan memberikan pengalaman liburan keluarga yang tak terlupakan.

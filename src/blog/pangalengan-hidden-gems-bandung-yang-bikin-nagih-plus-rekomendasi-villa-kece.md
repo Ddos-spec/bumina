@@ -3,7 +3,7 @@ title: "Pangalengan: Hidden Gems Bandung yang Bikin Nagih! (Plus, Rekomendasi Vi
 excerpt: "Siapa bilang Bandung cuma Kawah Putih dan floating market? Pangalengan punya segudang pesona tersembunyi yang siap memanjakan mata dan dompetmu. Yuk, intip itinerary liburan hemat di Pangalengan!"
 category: "Destinasi"
 date: "2025-08-30"
-image: "/images/blog/situ-cileunca-pangalengan.jpg"
+image: "/pemandangan3.webp"
 ---
 
 # Pangalengan: Hidden Gems Bandung yang Bikin Nagih! (Plus, Rekomendasi Villa Kece!)

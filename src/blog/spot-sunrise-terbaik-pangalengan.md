@@ -3,7 +3,7 @@ title: "5 Spot Sunrise Terbaik di Pangalengan, Wajib Datang!"
 date: "2024-07-28"
 category: "Wisata Alam"
 excerpt: "Jangan ngaku ke Pangalengan kalau belum liat sunrise-nya. Ini dia 5 spot terbaik buat nikmatin matahari terbit yang bikin lupa daratan."
-image: "https://images.pexels.com/photos/1266810/pexels-photo-1266810.jpeg"
+image: "/pemandangan3.webp"
 ---
 
 Pangalengan itu surganya pemburu sunrise. Dari atas ketinggian, lo bisa liat lautan awan dan semburat emas yang keren banget.

@@ -3,7 +3,7 @@ title: "Sunrise di Atas Awan & Hidden Gems: Panduan Liburan Hemat ke Pangalengan
 excerpt: "Pangalengan menyimpan sejuta pesona! Temukan tips liburan hemat, spot sunrise memukau, dan hidden gems yang belum banyak orang tahu di sini."
 category: "Tips Liburan"
 date: "2025-08-23"
-image: "/images/blog/sunrise-pangalengan.jpg"
+image: "/pemandangan1.webp"
 ---
 
 # Sunrise di Atas Awan & Hidden Gems: Panduan Liburan Hemat ke Pangalengan!

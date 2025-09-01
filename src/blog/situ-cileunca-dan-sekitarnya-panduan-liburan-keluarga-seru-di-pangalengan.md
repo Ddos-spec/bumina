@@ -3,7 +3,7 @@ title: "Situ Cileunca dan Sekitarnya: Panduan Liburan Keluarga Seru di Pangaleng
 excerpt: "Pangalengan itu surganya Bandung Selatan! Temukan hidden gems, nikmati udara segar, dan ciptakan kenangan tak terlupakan bersama keluarga di sekitar Situ Cileunca."
 category: "Destinasi"
 date: "2025-08-21"
-image: "/images/blog/situ-cileunca-pangalengan.jpg"
+image: "/pemandangan2.webp"
 ---
 
 # Situ Cileunca dan Sekitarnya: Panduan Liburan Keluarga Seru di Pangalengan

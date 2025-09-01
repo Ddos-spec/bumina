@@ -3,7 +3,7 @@ title: "Pangalengan: Liburan Hemat dan Sunrise Memukau di Balik Kabut"
 excerpt: "Pangalengan menawarkan keindahan alam yang luar biasa tanpa harus menguras dompet. Temukan spot sunrise terbaik dan nikmati liburan tak terlupakan di Bandung Selatan."
 category: "Tips Liburan"
 date: "2025-08-29"
-image: "/images/blog/sunrise-pangalengan.jpg"
+image: "/pemandangan1.webp"
 ---
 
 Pernahkah kamu membayangkan terbangun di tengah kabut lembut, ditemani secangkir kopi hangat, dan menyaksikan matahari terbit yang memukau di antara perbukitan hijau? Pengalaman inilah yang menanti di Pangalengan, Bandung Selatan. Kabar baiknya, semua ini bisa dinikmati tanpa harus merogoh kocek terlalu dalam!

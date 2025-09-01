@@ -3,7 +3,7 @@ title: "Tips Liburan Hemat dan Seru di Pangalengan"
 date: "2024-07-20"
 category: "Tips"
 excerpt: "Siapa bilang liburan ke Pangalengan harus mahal? Dengan tips ini, lo bisa nikmatin semua keindahannya tanpa bikin kantong bolong."
-image: "https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg"
+image: "/pemandangan2.webp"
 ---
 
 Kunci liburan hemat di Pangalengan itu **perencanaan**.
