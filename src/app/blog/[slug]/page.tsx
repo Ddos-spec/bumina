@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { getAllArticles, getArticleBySlug, type Article } from "@/blog/articleHelpers";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -19,7 +20,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const post = await getArticleBySlug(params.slug);
+  const { post } = await getArticleBySlug(params.slug);
   
   if (!post) {
     return generateMetadataObject({ title: "Artikel Tidak Ditemukan" });
@@ -35,7 +36,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function BlogPostDetail({ params }: PageProps) {
   const { slug } = params;
-  const post = await getArticleBySlug(slug);
+  const { post, relatedPosts } = await getArticleBySlug(slug);
 
   if (!post) {
     notFound();
@@ -81,6 +82,41 @@ export default async function BlogPostDetail({ params }: PageProps) {
           </article>
         </div>
       </main>
+
+      {/* Related Articles Section */}
+      {relatedPosts && relatedPosts.length > 0 && (
+        <aside className="bg-gray-50 py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              Baca Juga Artikel Lainnya
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {relatedPosts.map((related) => (
+                <Link href={`/blog/${related.slug}`} key={related.slug} className="block group">
+                  <article className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
+                    <div className="w-full h-40 relative">
+                      <img 
+                        src={related.image} 
+                        alt={related.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="p-6 flex-grow">
+                      <span className="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full mb-3 inline-block">
+                        {related.category}
+                      </span>
+                      <h3 className="text-lg font-bold text-gray-900 line-clamp-2 group-hover:text-green-600 transition-colors">
+                        {related.title}
+                      </h3>
+                    </div>
+                  </article>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </aside>
+      )}
+
       <Footer />
     </>
   );

@@ -84,7 +84,7 @@ export async function getAllArticles(): Promise<Article[]> {
   return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
-export async function getArticleBySlug(slug: string): Promise<Article | null> {
+export async function getArticleBySlug(slug: string) {
   const filepath = path.join(POSTS_DIR, `${slug}.md`);
   try {
     const raw = await fs.readFile(filepath, 'utf-8');
@@ -92,7 +92,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
     assertFrontmatter(data, slug);
     const html = await markdownToHtml(content);
 
-    return {
+    const post: Article = {
       title: String(data.title),
       excerpt: String(data.excerpt),
       content: html,
@@ -101,7 +101,18 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
       slug,
       image: String(data.image),
     };
+
+    // Get related posts
+    const allArticles = await getAllArticles();
+    const relatedPosts = allArticles
+      .filter(p => p.category === post.category && p.slug !== post.slug)
+      .slice(0, 3);
+
+    return {
+      post,
+      relatedPosts,
+    };
   } catch (e) {
-    return null;
+    return { post: null, relatedPosts: [] };
   }
 }

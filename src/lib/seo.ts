@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { type Article } from './articleHelpers';
+import { type Article } from '@/blog/articleHelpers';
 
 // --- KONFIGURASI SEO GLOBAL ---
 const siteConfig = {
