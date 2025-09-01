@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
   // Cukup nama reponya aja, gak pake aneh-aneh
   basePath: '',
 
+  // Biar URL-nya pake trailing slash (/about/), penting buat static export
+  trailingSlash: true,
+
   // Wajib `true` buat static export, biar gambar tetep muncul
   images: {
     unoptimized: true,
