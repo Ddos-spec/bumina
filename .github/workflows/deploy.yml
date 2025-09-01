@@ -16,17 +16,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          # Hapus cache pnpm dari sini karena pnpm belum terinstal
 
-      - name: Install pnpm globally
-        run: npm install -g pnpm
-
-      - name: Setup pnpm cache
-        uses: actions/setup-node@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
         with:
-          node-version: "20"
-          cache: 'pnpm'
-          cache-dependency-path: pnpm-lock.yaml
+          version: latest
+          run_install: false
 
       - name: Install Dependencies
         run: pnpm install
