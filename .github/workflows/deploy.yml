@@ -26,6 +26,10 @@ jobs:
           node-version: "20" # Versi Node.js yang sama
           cache: 'pnpm'
 
+      # Tambahkan langkah ini untuk menginstal pnpm
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       # 3. Install semua dependencies
       - name: Install Dependencies
         run: pnpm install
