@@ -24,15 +24,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20" # Versi Node.js yang sama
-          cache: 'npm'
+          cache: 'pnpm'
 
       # 3. Install semua dependencies
       - name: Install Dependencies
-        run: npm install
+        run: pnpm install
 
       # 4. Build project jadi file statis di folder 'out'
       - name: Build Project
-        run: npm run build
+        run: pnpm run build
 
       # 5. Deploy ke Hostinger via FTP
       - name: Deploy to Hostinger
