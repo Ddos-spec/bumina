@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { getAllArticles } from '@/lib/articleHelpers'
+import { getAllArticles } from '@/blog/articleHelpers'
 
 export const dynamic = 'force-static'
 
